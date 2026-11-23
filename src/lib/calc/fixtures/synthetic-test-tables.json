@@ -1,0 +1,147 @@
+[
+  {
+    "code_family": "IPC",
+    "edition": "SYNTHETIC-TEST-1",
+    "table_key": "dfu_fixtures",
+    "schema_version": 1,
+    "title": "Synthetic Test DFU Fixture Table",
+    "code_ref": "SYNTHETIC-TEST DFU-1",
+    "data": {
+      "fixtures": [
+        { "fixture_key": "lav", "label": "Lavatory", "dfu": 1, "min_trap_in": 1.25, "occupancy": "any" },
+        { "fixture_key": "shower", "label": "Shower", "dfu": 2, "min_trap_in": 2, "occupancy": "any" },
+        { "fixture_key": "wc_private", "label": "Water Closet (Private)", "dfu": 3, "min_trap_in": 3, "occupancy": "private" },
+        { "fixture_key": "wc_public", "label": "Water Closet (Public)", "dfu": 6, "min_trap_in": 3, "occupancy": "public" },
+        { "fixture_key": "kitchen_sink", "label": "Kitchen Sink", "dfu": 2, "min_trap_in": 1.5, "occupancy": "any" },
+        { "fixture_key": "floor_drain", "label": "Floor Drain", "dfu": 2, "min_trap_in": 2, "occupancy": "any" },
+        { "fixture_key": "tub", "label": "Bathtub", "dfu": 2, "min_trap_in": 1.5, "occupancy": "any" },
+        { "fixture_key": "urinal", "label": "Urinal", "dfu": 4, "min_trap_in": 2, "occupancy": "public" }
+      ]
+    }
+  },
+  {
+    "code_family": "IPC",
+    "edition": "SYNTHETIC-TEST-1",
+    "table_key": "drain_sizing",
+    "schema_version": 1,
+    "title": "Synthetic Test Drain Sizing Table",
+    "code_ref": "SYNTHETIC-TEST DRAIN-1",
+    "data": {
+      "entries": [
+        { "pipe_size_in": 1.5, "slope_in_per_ft": 0.25, "max_dfu": 3, "system_kind": "horizontal_branch" },
+        { "pipe_size_in": 2, "slope_in_per_ft": 0.25, "max_dfu": 8, "system_kind": "horizontal_branch" },
+        { "pipe_size_in": 3, "slope_in_per_ft": 0.25, "max_dfu": 24, "system_kind": "horizontal_branch" },
+        { "pipe_size_in": 4, "slope_in_per_ft": 0.25, "max_dfu": 120, "system_kind": "horizontal_branch" },
+        { "pipe_size_in": 3, "slope_in_per_ft": 0.125, "max_dfu": 18, "system_kind": "horizontal_branch" },
+        { "pipe_size_in": 4, "slope_in_per_ft": 0.125, "max_dfu": 90, "system_kind": "horizontal_branch" },
+        { "pipe_size_in": 3, "slope_in_per_ft": 0.25, "max_dfu": 30, "system_kind": "building_drain" },
+        { "pipe_size_in": 4, "slope_in_per_ft": 0.25, "max_dfu": 160, "system_kind": "building_drain" },
+        { "pipe_size_in": 6, "slope_in_per_ft": 0.25, "max_dfu": 600, "system_kind": "building_drain" },
+        { "pipe_size_in": 3, "slope_in_per_ft": 0.125, "max_dfu": 22, "system_kind": "building_drain" },
+        { "pipe_size_in": 4, "slope_in_per_ft": 0.125, "max_dfu": 120, "system_kind": "building_drain" },
+        { "pipe_size_in": 6, "slope_in_per_ft": 0.125, "max_dfu": 480, "system_kind": "building_drain" },
+        { "pipe_size_in": 2, "slope_in_per_ft": 0, "max_dfu": 10, "system_kind": "vertical_stack" },
+        { "pipe_size_in": 3, "slope_in_per_ft": 0, "max_dfu": 48, "system_kind": "vertical_stack" },
+        { "pipe_size_in": 4, "slope_in_per_ft": 0, "max_dfu": 240, "system_kind": "vertical_stack" }
+      ]
+    }
+  },
+  {
+    "code_family": "IPC",
+    "edition": "SYNTHETIC-TEST-1",
+    "table_key": "vent_sizing",
+    "schema_version": 1,
+    "title": "Synthetic Test Vent Sizing Table",
+    "code_ref": "SYNTHETIC-TEST VENT-1",
+    "data": {
+      "entries": [
+        { "soil_stack_size_in": 2, "max_dfu": 10, "vent_size_in": 1.25, "max_developed_length_ft": 50 },
+        { "soil_stack_size_in": 2, "max_dfu": 20, "vent_size_in": 1.5, "max_developed_length_ft": 120 },
+        { "soil_stack_size_in": 3, "max_dfu": 20, "vent_size_in": 1.5, "max_developed_length_ft": 60 },
+        { "soil_stack_size_in": 3, "max_dfu": 40, "vent_size_in": 2, "max_developed_length_ft": 150 },
+        { "soil_stack_size_in": 3, "max_dfu": 80, "vent_size_in": 2.5, "max_developed_length_ft": 240 },
+        { "soil_stack_size_in": 4, "max_dfu": 40, "vent_size_in": 2, "max_developed_length_ft": 80 },
+        { "soil_stack_size_in": 4, "max_dfu": 120, "vent_size_in": 2.5, "max_developed_length_ft": 160 },
+        { "soil_stack_size_in": 4, "max_dfu": 250, "vent_size_in": 3, "max_developed_length_ft": 280 }
+      ]
+    }
+  },
+  {
+    "code_family": "IPC",
+    "edition": "SYNTHETIC-TEST-1",
+    "table_key": "wsfu_supply",
+    "schema_version": 1,
+    "title": "Synthetic Test WSFU Water Supply Table",
+    "code_ref": "SYNTHETIC-TEST WSFU-1",
+    "data": {
+      "fixtures": [
+        { "fixture_key": "lav_tank", "label": "Lavatory (Tank)", "wsfu": 1, "supply_type": "flush_tank" },
+        { "fixture_key": "shower_tank", "label": "Shower (Tank)", "wsfu": 2, "supply_type": "flush_tank" },
+        { "fixture_key": "wc_tank", "label": "Water Closet (Tank)", "wsfu": 3, "supply_type": "flush_tank" },
+        { "fixture_key": "hose_bibb", "label": "Hose Bibb", "wsfu": 2.5, "supply_type": "flush_tank" },
+        { "fixture_key": "wc_valve", "label": "Water Closet (Flushometer)", "wsfu": 10, "supply_type": "flushometer" },
+        { "fixture_key": "urinal_valve", "label": "Urinal (Flushometer)", "wsfu": 5, "supply_type": "flushometer" },
+        { "fixture_key": "lav_public", "label": "Lavatory (Public)", "wsfu": 2, "supply_type": "flushometer" }
+      ],
+      "demand_curve": [
+        { "max_wsfu": 10, "gpm": 8, "supply_type": "flush_tank" },
+        { "max_wsfu": 20, "gpm": 14, "supply_type": "flush_tank" },
+        { "max_wsfu": 50, "gpm": 28, "supply_type": "flush_tank" },
+        { "max_wsfu": 100, "gpm": 44, "supply_type": "flush_tank" },
+        { "max_wsfu": 10, "gpm": 25, "supply_type": "flushometer" },
+        { "max_wsfu": 30, "gpm": 40, "supply_type": "flushometer" },
+        { "max_wsfu": 60, "gpm": 55, "supply_type": "flushometer" },
+        { "max_wsfu": 120, "gpm": 75, "supply_type": "flushometer" }
+      ],
+      "pipe_sizing": [
+        { "pipe_size_in": 0.5, "material": "copper_l", "max_gpm": 6, "max_velocity_fps": 6 },
+        { "pipe_size_in": 0.75, "material": "copper_l", "max_gpm": 13, "max_velocity_fps": 6 },
+        { "pipe_size_in": 1, "material": "copper_l", "max_gpm": 24, "max_velocity_fps": 6 },
+        { "pipe_size_in": 1.25, "material": "copper_l", "max_gpm": 38, "max_velocity_fps": 6 },
+        { "pipe_size_in": 1.5, "material": "copper_l", "max_gpm": 56, "max_velocity_fps": 6 },
+        { "pipe_size_in": 2, "material": "copper_l", "max_gpm": 96, "max_velocity_fps": 6 },
+        { "pipe_size_in": 0.5, "material": "pex_a", "max_gpm": 4.5, "max_velocity_fps": 5 },
+        { "pipe_size_in": 0.75, "material": "pex_a", "max_gpm": 10, "max_velocity_fps": 5 },
+        { "pipe_size_in": 1, "material": "pex_a", "max_gpm": 18, "max_velocity_fps": 5 },
+        { "pipe_size_in": 1.25, "material": "pex_a", "max_gpm": 30, "max_velocity_fps": 5 }
+      ]
+    }
+  },
+  {
+    "code_family": "IPC",
+    "edition": "SYNTHETIC-TEST-1",
+    "table_key": "gas_pipe_sizing",
+    "schema_version": 1,
+    "title": "Synthetic Test Gas Pipe Sizing Table",
+    "code_ref": "SYNTHETIC-TEST GAS-1",
+    "data": {
+      "gas_type": "Natural Gas (Synthetic Test)",
+      "heating_value_btu_per_cf": 1000,
+      "inlet_pressure_inwc": 7,
+      "pressure_drop_inwc": 0.5,
+      "material": "Schedule 40 Black Steel",
+      "entries": [
+        { "pipe_size_in": 0.5, "length_ft": 10, "max_cfh": 160 },
+        { "pipe_size_in": 0.75, "length_ft": 10, "max_cfh": 340 },
+        { "pipe_size_in": 1, "length_ft": 10, "max_cfh": 640 },
+        { "pipe_size_in": 1.25, "length_ft": 10, "max_cfh": 1300 },
+        { "pipe_size_in": 1.5, "length_ft": 10, "max_cfh": 2000 },
+        { "pipe_size_in": 0.5, "length_ft": 30, "max_cfh": 90 },
+        { "pipe_size_in": 0.75, "length_ft": 30, "max_cfh": 190 },
+        { "pipe_size_in": 1, "length_ft": 30, "max_cfh": 360 },
+        { "pipe_size_in": 1.25, "length_ft": 30, "max_cfh": 740 },
+        { "pipe_size_in": 1.5, "length_ft": 30, "max_cfh": 1140 },
+        { "pipe_size_in": 0.5, "length_ft": 50, "max_cfh": 70 },
+        { "pipe_size_in": 0.75, "length_ft": 50, "max_cfh": 145 },
+        { "pipe_size_in": 1, "length_ft": 50, "max_cfh": 275 },
+        { "pipe_size_in": 1.25, "length_ft": 50, "max_cfh": 560 },
+        { "pipe_size_in": 1.5, "length_ft": 50, "max_cfh": 880 },
+        { "pipe_size_in": 0.5, "length_ft": 100, "max_cfh": 48 },
+        { "pipe_size_in": 0.75, "length_ft": 100, "max_cfh": 100 },
+        { "pipe_size_in": 1, "length_ft": 100, "max_cfh": 195 },
+        { "pipe_size_in": 1.25, "length_ft": 100, "max_cfh": 400 },
+        { "pipe_size_in": 1.5, "length_ft": 100, "max_cfh": 620 }
+      ]
+    }
+  }
+]

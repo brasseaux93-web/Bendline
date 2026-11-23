@@ -1,0 +1,207 @@
+{
+  "synthetic_rules": [
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "connectivity",
+      "description_paraphrased": "Fixtures must connect continuously to system terminal or stack.",
+      "params": { "require_connected_fixtures": true },
+      "code_ref": "SYNTHETIC-RULE CONN-1"
+    },
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "trap_present",
+      "description_paraphrased": "Fixtures require a P-trap unless explicitly exempt.",
+      "params": { "exempt_fixtures": [] },
+      "code_ref": "SYNTHETIC-RULE TRAP-1"
+    },
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "vent_reaches_terminal",
+      "description_paraphrased": "Vent path must rise above fixture level to VTR terminal.",
+      "params": { "min_vent_rise_above_fixture": 1 },
+      "code_ref": "SYNTHETIC-RULE VENT-1"
+    },
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "fitting_appropriateness",
+      "description_paraphrased": "Prohibited fittings may not be used on horizontal DWV branch junctions.",
+      "params": { "prohibited_horizontal_dwv_fittings": ["tee"] },
+      "code_ref": "SYNTHETIC-RULE FIT-1"
+    },
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "slope_direction",
+      "description_paraphrased": "Horizontal DWV pipes must pitch continuously toward drain.",
+      "params": { "min_slope_in_per_ft": 0.25 },
+      "code_ref": "SYNTHETIC-RULE SLOPE-1"
+    },
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "sizing_labels",
+      "description_paraphrased": "Pipe segments must carry valid nominal diameter labels.",
+      "params": { "min_size_by_system": { "dwv": 1.5, "vent": 1.25, "supply": 0.5 } },
+      "code_ref": "SYNTHETIC-RULE SIZE-1"
+    },
+    {
+      "code_family": "IPC",
+      "edition": "SYNTHETIC-TEST-1",
+      "rule_key": "no_dead_ends",
+      "description_paraphrased": "No unpermitted dead-end fittings allowed.",
+      "params": { "permitted_dead_end_fittings": ["cleanout"] },
+      "code_ref": "SYNTHETIC-RULE DEAD-1"
+    }
+  ],
+  "cases": [
+    {
+      "name": "valid complete DWV+Vent assembly passes all 7 rules",
+      "expectedScore": 100,
+      "expectedMax": 100,
+      "expectedPassedRules": ["connectivity", "trap_present", "vent_reaches_terminal", "fitting_appropriateness", "slope_direction", "sizing_labels", "no_dead_ends"],
+      "expectedFailedRules": [],
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": true },
+          { "id": "j-1", "pos": [2, 0, 0], "kind": "fitting", "fittingType": "wye" },
+          { "id": "stack-1", "pos": [4, 0, 0], "kind": "stack" },
+          { "id": "term-drain", "pos": [4, 0, -2], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": [
+          { "id": "e1", "from": "fx-lav", "to": "j-1", "axis": "x", "length": 2, "size": 1.5, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e2", "from": "j-1", "to": "stack-1", "axis": "x", "length": 2, "size": 3, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e3", "from": "stack-1", "to": "term-drain", "axis": "-z", "length": 2, "size": 3, "system": "dwv", "slope": null },
+          { "id": "e4", "from": "j-1", "to": "term-vtr", "axis": "z", "length": 3, "size": 1.5, "system": "vent", "slope": null }
+        ]
+      }
+    },
+    {
+      "name": "disconnected fixture fails connectivity and vent_reaches_terminal",
+      "expectedScore": 65,
+      "expectedMax": 100,
+      "expectedPassedRules": ["trap_present", "fitting_appropriateness", "slope_direction", "sizing_labels", "no_dead_ends"],
+      "expectedFailedRules": ["connectivity", "vent_reaches_terminal"],
+      "expectedOffendingForRule": { "connectivity": ["fx-lav"] },
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": true },
+          { "id": "term-drain", "pos": [4, 0, -2], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": []
+      }
+    },
+    {
+      "name": "missing trap fails trap_present",
+      "expectedScore": 85,
+      "expectedMax": 100,
+      "expectedPassedRules": ["connectivity", "vent_reaches_terminal", "fitting_appropriateness", "slope_direction", "sizing_labels", "no_dead_ends"],
+      "expectedFailedRules": ["trap_present"],
+      "expectedOffendingForRule": { "trap_present": ["fx-lav"] },
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": false },
+          { "id": "j-1", "pos": [2, 0, 0], "kind": "fitting", "fittingType": "wye" },
+          { "id": "term-drain", "pos": [4, 0, 0], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": [
+          { "id": "e1", "from": "fx-lav", "to": "j-1", "axis": "x", "length": 2, "size": 1.5, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e2", "from": "j-1", "to": "term-drain", "axis": "x", "length": 2, "size": 3, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e3", "from": "j-1", "to": "term-vtr", "axis": "z", "length": 3, "size": 1.5, "system": "vent", "slope": null }
+        ]
+      }
+    },
+    {
+      "name": "horizontal tee on DWV branch fails fitting_appropriateness",
+      "expectedScore": 85,
+      "expectedMax": 100,
+      "expectedPassedRules": ["connectivity", "trap_present", "vent_reaches_terminal", "slope_direction", "sizing_labels", "no_dead_ends"],
+      "expectedFailedRules": ["fitting_appropriateness"],
+      "expectedOffendingForRule": { "fitting_appropriateness": ["j-1"] },
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": true },
+          { "id": "j-1", "pos": [2, 0, 0], "kind": "fitting", "fittingType": "tee" },
+          { "id": "term-drain", "pos": [4, 0, 0], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": [
+          { "id": "e1", "from": "fx-lav", "to": "j-1", "axis": "x", "length": 2, "size": 1.5, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e2", "from": "j-1", "to": "term-drain", "axis": "x", "length": 2, "size": 3, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e3", "from": "j-1", "to": "term-vtr", "axis": "z", "length": 3, "size": 1.5, "system": "vent", "slope": null }
+        ]
+      }
+    },
+    {
+      "name": "backpitched or missing slope fails slope_direction",
+      "expectedScore": 85,
+      "expectedMax": 100,
+      "expectedPassedRules": ["connectivity", "trap_present", "vent_reaches_terminal", "fitting_appropriateness", "sizing_labels", "no_dead_ends"],
+      "expectedFailedRules": ["slope_direction"],
+      "expectedOffendingForRule": { "slope_direction": ["fx-lav", "j-1"] },
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": true },
+          { "id": "j-1", "pos": [2, 0, 0], "kind": "fitting", "fittingType": "wye" },
+          { "id": "term-drain", "pos": [4, 0, 0], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": [
+          { "id": "e1", "from": "fx-lav", "to": "j-1", "axis": "x", "length": 2, "size": 1.5, "system": "dwv", "slope": 0.25, "slopeToward": "from" },
+          { "id": "e2", "from": "j-1", "to": "term-drain", "axis": "x", "length": 2, "size": 3, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e3", "from": "j-1", "to": "term-vtr", "axis": "z", "length": 3, "size": 1.5, "system": "vent", "slope": null }
+        ]
+      }
+    },
+    {
+      "name": "missing size label fails sizing_labels",
+      "expectedScore": 90,
+      "expectedMax": 100,
+      "expectedPassedRules": ["connectivity", "trap_present", "vent_reaches_terminal", "fitting_appropriateness", "slope_direction", "no_dead_ends"],
+      "expectedFailedRules": ["sizing_labels"],
+      "expectedOffendingForRule": { "sizing_labels": ["fx-lav", "j-1"] },
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": true },
+          { "id": "j-1", "pos": [2, 0, 0], "kind": "fitting", "fittingType": "wye" },
+          { "id": "term-drain", "pos": [4, 0, 0], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": [
+          { "id": "e1", "from": "fx-lav", "to": "j-1", "axis": "x", "length": 2, "size": null, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e2", "from": "j-1", "to": "term-drain", "axis": "x", "length": 2, "size": 3, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e3", "from": "j-1", "to": "term-vtr", "axis": "z", "length": 3, "size": 1.5, "system": "vent", "slope": null }
+        ]
+      }
+    },
+    {
+      "name": "unpermitted dead end fitting fails no_dead_ends while cleanout passes",
+      "expectedScore": 90,
+      "expectedMax": 100,
+      "expectedPassedRules": ["connectivity", "trap_present", "vent_reaches_terminal", "fitting_appropriateness", "slope_direction", "sizing_labels"],
+      "expectedFailedRules": ["no_dead_ends"],
+      "expectedOffendingForRule": { "no_dead_ends": ["dead-elbow"] },
+      "graph": {
+        "nodes": [
+          { "id": "fx-lav", "pos": [0, 0, 0], "kind": "fixture", "fixtureType": "lav", "hasTrap": true },
+          { "id": "j-1", "pos": [2, 0, 0], "kind": "fitting", "fittingType": "wye" },
+          { "id": "dead-elbow", "pos": [2, 2, 0], "kind": "fitting", "fittingType": "elbow_90" },
+          { "id": "term-drain", "pos": [4, 0, 0], "kind": "terminal", "terminalType": "building_drain_out" },
+          { "id": "term-vtr", "pos": [2, 0, 3], "kind": "terminal", "terminalType": "vtr" }
+        ],
+        "edges": [
+          { "id": "e1", "from": "fx-lav", "to": "j-1", "axis": "x", "length": 2, "size": 1.5, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e2", "from": "j-1", "to": "term-drain", "axis": "x", "length": 2, "size": 3, "system": "dwv", "slope": 0.25, "slopeToward": "to" },
+          { "id": "e3", "from": "j-1", "to": "term-vtr", "axis": "z", "length": 3, "size": 1.5, "system": "vent", "slope": null },
+          { "id": "e4", "from": "j-1", "to": "dead-elbow", "axis": "y", "length": 2, "size": 1.5, "system": "dwv", "slope": 0.25, "slopeToward": "from" }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,3920 @@
+[
+  {
+    "id": "eval-001",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-1",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000001",
+        "stem": "Why must horizontal sanitary branches pitch downward toward the building drain? (Scenario #1)",
+        "type": "scenario",
+        "options": [
+          "To maintain self-scouring velocity and carry solids in suspension",
+          "To keep water standing statically in the pipe",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 3
+      },
+      "user_answer": "To keep water standing statically in the pipe",
+      "correct_answer": "To maintain self-scouring velocity and carry solids in suspension",
+      "explanation_seed": "Continuous downward slope keeps solids suspended in flowing liquid instead of settling.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-1",
+          "code_ref": "IPC 704.1",
+          "paraphrased_text": "Horizontal drainage requires continuous positive fall so waste water moves solids without stranding debris in the branch.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-002",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-2",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000002",
+        "stem": "How does an open vent stack protect fixture trap water seals during heavy discharge? (Scenario #2)",
+        "type": "scenario",
+        "options": [
+          "By admitting atmospheric air to equalize positive and negative drain pressures",
+          "By pressurizing the building sewer above street water pressure",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 905.2",
+        "topic_slug": "vents-venting",
+        "difficulty": 4
+      },
+      "user_answer": "By pressurizing the building sewer above street water pressure",
+      "correct_answer": "By admitting atmospheric air to equalize positive and negative drain pressures",
+      "explanation_seed": "Venting balances air pressure across trap weirs so siphonage and backpressure do not empty seals.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-2",
+          "code_ref": "IPC 905.2",
+          "paraphrased_text": "Open vent piping equalizes pressure fluctuations inside drainage branches before suction pulls trap water seals dry.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-003",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-3",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000003",
+        "stem": "Why does an RPZ backflow assembly include an intermediate relief valve chamber? (Scenario #3)",
+        "type": "scenario",
+        "options": [
+          "To discharge water to atmosphere if check valves foul under backpressure",
+          "To increase domestic hot water temperature at fixtures",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 608.15",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 3
+      },
+      "user_answer": "To increase domestic hot water temperature at fixtures",
+      "correct_answer": "To discharge water to atmosphere if check valves foul under backpressure",
+      "explanation_seed": "The relief port opens automatically whenever downstream pressure exceeds supply pressure across a leaking check.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-3",
+          "code_ref": "IPC 608.15",
+          "paraphrased_text": "An intermediate relief valve dumps polluted water safely to air whenever check seals degrade under backpressure.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-004",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-4",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000004",
+        "stem": "What problem develops when a fixture trap is crown-vented directly at the top bend? (Scenario #4)",
+        "type": "scenario",
+        "options": [
+          "Waste solids splash into and plug the vent throat while risking trap siphonage",
+          "Supply flow rate doubles at the kitchen faucet",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 1002.2",
+        "topic_slug": "traps-interceptors",
+        "difficulty": 4
+      },
+      "user_answer": "Supply flow rate doubles at the kitchen faucet",
+      "correct_answer": "Waste solids splash into and plug the vent throat while risking trap siphonage",
+      "explanation_seed": "Taking the vent off too close to the trap weir exposes the opening to fouling and weakens seal retention.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-4",
+          "code_ref": "UPC 1002.2",
+          "paraphrased_text": "Venting directly at the crown exposes the vent inlet to grease and debris fouling and compromises the liquid seal.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-005",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-5",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000005",
+        "stem": "Why does a storage water heater installed above finished rooms need a drained safety pan? (Scenario #5)",
+        "type": "scenario",
+        "options": [
+          "To intercept tank leaks and route water safely to an approved drain location",
+          "To raise burner combustion efficiency during standby cycles",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 505.2",
+        "topic_slug": "water-heaters",
+        "difficulty": 3
+      },
+      "user_answer": "To raise burner combustion efficiency during standby cycles",
+      "correct_answer": "To intercept tank leaks and route water safely to an approved drain location",
+      "explanation_seed": "Drained pans protect ceilings and framing from slow weeping or tank failure over living spaces.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-5",
+          "code_ref": "UPC 505.2",
+          "paraphrased_text": "A corrosion-resistant pan with a piped drain carries leaking tank water to a visible or safe disposal point.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-006",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-6",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000006",
+        "stem": "Why must horizontal sanitary branches pitch downward toward the building drain? (Scenario #6)",
+        "type": "scenario",
+        "options": [
+          "To maintain self-scouring velocity and carry solids in suspension",
+          "To keep water standing statically in the pipe",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 4
+      },
+      "user_answer": "To keep water standing statically in the pipe",
+      "correct_answer": "To maintain self-scouring velocity and carry solids in suspension",
+      "explanation_seed": "Continuous downward slope keeps solids suspended in flowing liquid instead of settling.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-6",
+          "code_ref": "IPC 704.1",
+          "paraphrased_text": "Horizontal drainage requires continuous positive fall so waste water moves solids without stranding debris in the branch.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-007",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-7",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000007",
+        "stem": "How does an open vent stack protect fixture trap water seals during heavy discharge? (Scenario #7)",
+        "type": "scenario",
+        "options": [
+          "By admitting atmospheric air to equalize positive and negative drain pressures",
+          "By pressurizing the building sewer above street water pressure",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 905.2",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "By pressurizing the building sewer above street water pressure",
+      "correct_answer": "By admitting atmospheric air to equalize positive and negative drain pressures",
+      "explanation_seed": "Venting balances air pressure across trap weirs so siphonage and backpressure do not empty seals.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-7",
+          "code_ref": "IPC 905.2",
+          "paraphrased_text": "Open vent piping equalizes pressure fluctuations inside drainage branches before suction pulls trap water seals dry.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-008",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-8",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000008",
+        "stem": "Why does an RPZ backflow assembly include an intermediate relief valve chamber? (Scenario #8)",
+        "type": "scenario",
+        "options": [
+          "To discharge water to atmosphere if check valves foul under backpressure",
+          "To increase domestic hot water temperature at fixtures",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 608.15",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 4
+      },
+      "user_answer": "To increase domestic hot water temperature at fixtures",
+      "correct_answer": "To discharge water to atmosphere if check valves foul under backpressure",
+      "explanation_seed": "The relief port opens automatically whenever downstream pressure exceeds supply pressure across a leaking check.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-8",
+          "code_ref": "IPC 608.15",
+          "paraphrased_text": "An intermediate relief valve dumps polluted water safely to air whenever check seals degrade under backpressure.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-009",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-9",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000009",
+        "stem": "What problem develops when a fixture trap is crown-vented directly at the top bend? (Scenario #9)",
+        "type": "scenario",
+        "options": [
+          "Waste solids splash into and plug the vent throat while risking trap siphonage",
+          "Supply flow rate doubles at the kitchen faucet",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 1002.2",
+        "topic_slug": "traps-interceptors",
+        "difficulty": 3
+      },
+      "user_answer": "Supply flow rate doubles at the kitchen faucet",
+      "correct_answer": "Waste solids splash into and plug the vent throat while risking trap siphonage",
+      "explanation_seed": "Taking the vent off too close to the trap weir exposes the opening to fouling and weakens seal retention.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-9",
+          "code_ref": "UPC 1002.2",
+          "paraphrased_text": "Venting directly at the crown exposes the vent inlet to grease and debris fouling and compromises the liquid seal.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-010",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-10",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000010",
+        "stem": "Why does a storage water heater installed above finished rooms need a drained safety pan? (Scenario #10)",
+        "type": "scenario",
+        "options": [
+          "To intercept tank leaks and route water safely to an approved drain location",
+          "To raise burner combustion efficiency during standby cycles",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 505.2",
+        "topic_slug": "water-heaters",
+        "difficulty": 4
+      },
+      "user_answer": "To raise burner combustion efficiency during standby cycles",
+      "correct_answer": "To intercept tank leaks and route water safely to an approved drain location",
+      "explanation_seed": "Drained pans protect ceilings and framing from slow weeping or tank failure over living spaces.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-10",
+          "code_ref": "UPC 505.2",
+          "paraphrased_text": "A corrosion-resistant pan with a piped drain carries leaking tank water to a visible or safe disposal point.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-011",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-11",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000011",
+        "stem": "Why must horizontal sanitary branches pitch downward toward the building drain? (Scenario #11)",
+        "type": "scenario",
+        "options": [
+          "To maintain self-scouring velocity and carry solids in suspension",
+          "To keep water standing statically in the pipe",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 3
+      },
+      "user_answer": "To keep water standing statically in the pipe",
+      "correct_answer": "To maintain self-scouring velocity and carry solids in suspension",
+      "explanation_seed": "Continuous downward slope keeps solids suspended in flowing liquid instead of settling.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-11",
+          "code_ref": "IPC 704.1",
+          "paraphrased_text": "Horizontal drainage requires continuous positive fall so waste water moves solids without stranding debris in the branch.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-012",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-12",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000012",
+        "stem": "How does an open vent stack protect fixture trap water seals during heavy discharge? (Scenario #12)",
+        "type": "scenario",
+        "options": [
+          "By admitting atmospheric air to equalize positive and negative drain pressures",
+          "By pressurizing the building sewer above street water pressure",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 905.2",
+        "topic_slug": "vents-venting",
+        "difficulty": 4
+      },
+      "user_answer": "By pressurizing the building sewer above street water pressure",
+      "correct_answer": "By admitting atmospheric air to equalize positive and negative drain pressures",
+      "explanation_seed": "Venting balances air pressure across trap weirs so siphonage and backpressure do not empty seals.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-12",
+          "code_ref": "IPC 905.2",
+          "paraphrased_text": "Open vent piping equalizes pressure fluctuations inside drainage branches before suction pulls trap water seals dry.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-013",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-13",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000013",
+        "stem": "Why does an RPZ backflow assembly include an intermediate relief valve chamber? (Scenario #13)",
+        "type": "scenario",
+        "options": [
+          "To discharge water to atmosphere if check valves foul under backpressure",
+          "To increase domestic hot water temperature at fixtures",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 608.15",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 3
+      },
+      "user_answer": "To increase domestic hot water temperature at fixtures",
+      "correct_answer": "To discharge water to atmosphere if check valves foul under backpressure",
+      "explanation_seed": "The relief port opens automatically whenever downstream pressure exceeds supply pressure across a leaking check.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-13",
+          "code_ref": "IPC 608.15",
+          "paraphrased_text": "An intermediate relief valve dumps polluted water safely to air whenever check seals degrade under backpressure.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-014",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-14",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000014",
+        "stem": "What problem develops when a fixture trap is crown-vented directly at the top bend? (Scenario #14)",
+        "type": "scenario",
+        "options": [
+          "Waste solids splash into and plug the vent throat while risking trap siphonage",
+          "Supply flow rate doubles at the kitchen faucet",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 1002.2",
+        "topic_slug": "traps-interceptors",
+        "difficulty": 4
+      },
+      "user_answer": "Supply flow rate doubles at the kitchen faucet",
+      "correct_answer": "Waste solids splash into and plug the vent throat while risking trap siphonage",
+      "explanation_seed": "Taking the vent off too close to the trap weir exposes the opening to fouling and weakens seal retention.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-14",
+          "code_ref": "UPC 1002.2",
+          "paraphrased_text": "Venting directly at the crown exposes the vent inlet to grease and debris fouling and compromises the liquid seal.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-015",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-15",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000015",
+        "stem": "Why does a storage water heater installed above finished rooms need a drained safety pan? (Scenario #15)",
+        "type": "scenario",
+        "options": [
+          "To intercept tank leaks and route water safely to an approved drain location",
+          "To raise burner combustion efficiency during standby cycles",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 505.2",
+        "topic_slug": "water-heaters",
+        "difficulty": 3
+      },
+      "user_answer": "To raise burner combustion efficiency during standby cycles",
+      "correct_answer": "To intercept tank leaks and route water safely to an approved drain location",
+      "explanation_seed": "Drained pans protect ceilings and framing from slow weeping or tank failure over living spaces.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-15",
+          "code_ref": "UPC 505.2",
+          "paraphrased_text": "A corrosion-resistant pan with a piped drain carries leaking tank water to a visible or safe disposal point.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-016",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-16",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000016",
+        "stem": "Why must horizontal sanitary branches pitch downward toward the building drain? (Scenario #16)",
+        "type": "scenario",
+        "options": [
+          "To maintain self-scouring velocity and carry solids in suspension",
+          "To keep water standing statically in the pipe",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 4
+      },
+      "user_answer": "To keep water standing statically in the pipe",
+      "correct_answer": "To maintain self-scouring velocity and carry solids in suspension",
+      "explanation_seed": "Continuous downward slope keeps solids suspended in flowing liquid instead of settling.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-16",
+          "code_ref": "IPC 704.1",
+          "paraphrased_text": "Horizontal drainage requires continuous positive fall so waste water moves solids without stranding debris in the branch.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-017",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-17",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000017",
+        "stem": "How does an open vent stack protect fixture trap water seals during heavy discharge? (Scenario #17)",
+        "type": "scenario",
+        "options": [
+          "By admitting atmospheric air to equalize positive and negative drain pressures",
+          "By pressurizing the building sewer above street water pressure",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 905.2",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "By pressurizing the building sewer above street water pressure",
+      "correct_answer": "By admitting atmospheric air to equalize positive and negative drain pressures",
+      "explanation_seed": "Venting balances air pressure across trap weirs so siphonage and backpressure do not empty seals.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-17",
+          "code_ref": "IPC 905.2",
+          "paraphrased_text": "Open vent piping equalizes pressure fluctuations inside drainage branches before suction pulls trap water seals dry.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-018",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-18",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000018",
+        "stem": "Why does an RPZ backflow assembly include an intermediate relief valve chamber? (Scenario #18)",
+        "type": "scenario",
+        "options": [
+          "To discharge water to atmosphere if check valves foul under backpressure",
+          "To increase domestic hot water temperature at fixtures",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "IPC 608.15",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 4
+      },
+      "user_answer": "To increase domestic hot water temperature at fixtures",
+      "correct_answer": "To discharge water to atmosphere if check valves foul under backpressure",
+      "explanation_seed": "The relief port opens automatically whenever downstream pressure exceeds supply pressure across a leaking check.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-18",
+          "code_ref": "IPC 608.15",
+          "paraphrased_text": "An intermediate relief valve dumps polluted water safely to air whenever check seals degrade under backpressure.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-019",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-19",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000019",
+        "stem": "What problem develops when a fixture trap is crown-vented directly at the top bend? (Scenario #19)",
+        "type": "scenario",
+        "options": [
+          "Waste solids splash into and plug the vent throat while risking trap siphonage",
+          "Supply flow rate doubles at the kitchen faucet",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 1002.2",
+        "topic_slug": "traps-interceptors",
+        "difficulty": 3
+      },
+      "user_answer": "Supply flow rate doubles at the kitchen faucet",
+      "correct_answer": "Waste solids splash into and plug the vent throat while risking trap siphonage",
+      "explanation_seed": "Taking the vent off too close to the trap weir exposes the opening to fouling and weakens seal retention.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-19",
+          "code_ref": "UPC 1002.2",
+          "paraphrased_text": "Venting directly at the crown exposes the vent inlet to grease and debris fouling and compromises the liquid seal.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-020",
+    "expected_error_type": "concept",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Every horizontal drainage pipe shall be provided with a cleanout at its upper terminal and each change of direction exceeding forty five degrees.",
+    "input": {
+      "userId": "eval-user-20",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000020",
+        "stem": "Why does a storage water heater installed above finished rooms need a drained safety pan? (Scenario #20)",
+        "type": "scenario",
+        "options": [
+          "To intercept tank leaks and route water safely to an approved drain location",
+          "To raise burner combustion efficiency during standby cycles",
+          "To eliminate dielectric unions",
+          "To bypass fixture traps"
+        ],
+        "code_ref": "UPC 505.2",
+        "topic_slug": "water-heaters",
+        "difficulty": 4
+      },
+      "user_answer": "To raise burner combustion efficiency during standby cycles",
+      "correct_answer": "To intercept tank leaks and route water safely to an approved drain location",
+      "explanation_seed": "Drained pans protect ceilings and framing from slow weeping or tank failure over living spaces.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-c-20",
+          "code_ref": "UPC 505.2",
+          "paraphrased_text": "A corrosion-resistant pan with a piped drain carries leaking tank water to a visible or safe disposal point.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-021",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-21",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000021",
+        "stem": "According to the fixture unit table, which drainage fixture unit rating applies to a standard private lavatory? (Table check #1)",
+        "type": "lookup",
+        "options": [
+          "1 DFU",
+          "4 DFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 709.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "4 DFU",
+      "correct_answer": "1 DFU",
+      "explanation_seed": "Private lavatories carry a lower table rating than water closets or multi-compartment sinks.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-21",
+          "code_ref": "IPC Table 709.1",
+          "paraphrased_text": "The drainage fixture unit table assigns smaller individual weights to private basin fixtures.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-022",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-22",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000022",
+        "stem": "Which maximum trap arm distance row applies to a 2-inch fixture drain sloped at standard grade? (Table check #2)",
+        "type": "lookup",
+        "options": [
+          "8 ft table allowance",
+          "24 ft table allowance",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 909.1",
+        "topic_slug": "vents-venting",
+        "difficulty": 2
+      },
+      "user_answer": "24 ft table allowance",
+      "correct_answer": "8 ft table allowance",
+      "explanation_seed": "Maximum trap-to-vent distances follow the tabulated pipe size and slope schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-22",
+          "code_ref": "IPC Table 909.1",
+          "paraphrased_text": "Smaller trap arms lose vent continuity beyond their tabulated maximum developed distance.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-023",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-23",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000023",
+        "stem": "In the minimum plumbing facilities table, how are assembly occupancy fixture counts determined? (Table check #3)",
+        "type": "lookup",
+        "options": [
+          "By dividing occupant load across the tabulated occupancy schedule",
+          "By installing one fixture regardless of occupant load",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 422.1",
+        "topic_slug": "fixtures-fittings",
+        "difficulty": 2
+      },
+      "user_answer": "By installing one fixture regardless of occupant load",
+      "correct_answer": "By dividing occupant load across the tabulated occupancy schedule",
+      "explanation_seed": "Minimum fixture counts come directly from the occupancy schedule rows for each gender and use group.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-23",
+          "code_ref": "UPC Table 422.1",
+          "paraphrased_text": "The occupancy schedule specifies fixture-to-occupant ratios for public assembly buildings.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-024",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-24",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000024",
+        "stem": "Which tabulated water supply fixture unit weight applies to a public flushometer water closet? (Table check #4)",
+        "type": "lookup",
+        "options": [
+          "10 WSFU",
+          "1 WSFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 610.3",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "1 WSFU",
+      "correct_answer": "10 WSFU",
+      "explanation_seed": "Flushometer valves demand higher peak instantaneous flow in the supply fixture schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-24",
+          "code_ref": "UPC Table 610.3",
+          "paraphrased_text": "Public flushometer closets carry a high WSFU schedule weight compared to tank-type residential closets.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-025",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-25",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000025",
+        "stem": "According to the fixture unit table, which drainage fixture unit rating applies to a standard private lavatory? (Table check #5)",
+        "type": "lookup",
+        "options": [
+          "1 DFU",
+          "4 DFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 709.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "4 DFU",
+      "correct_answer": "1 DFU",
+      "explanation_seed": "Private lavatories carry a lower table rating than water closets or multi-compartment sinks.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-25",
+          "code_ref": "IPC Table 709.1",
+          "paraphrased_text": "The drainage fixture unit table assigns smaller individual weights to private basin fixtures.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-026",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-26",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000026",
+        "stem": "Which maximum trap arm distance row applies to a 2-inch fixture drain sloped at standard grade? (Table check #6)",
+        "type": "lookup",
+        "options": [
+          "8 ft table allowance",
+          "24 ft table allowance",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 909.1",
+        "topic_slug": "vents-venting",
+        "difficulty": 2
+      },
+      "user_answer": "24 ft table allowance",
+      "correct_answer": "8 ft table allowance",
+      "explanation_seed": "Maximum trap-to-vent distances follow the tabulated pipe size and slope schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-26",
+          "code_ref": "IPC Table 909.1",
+          "paraphrased_text": "Smaller trap arms lose vent continuity beyond their tabulated maximum developed distance.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-027",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-27",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000027",
+        "stem": "In the minimum plumbing facilities table, how are assembly occupancy fixture counts determined? (Table check #7)",
+        "type": "lookup",
+        "options": [
+          "By dividing occupant load across the tabulated occupancy schedule",
+          "By installing one fixture regardless of occupant load",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 422.1",
+        "topic_slug": "fixtures-fittings",
+        "difficulty": 2
+      },
+      "user_answer": "By installing one fixture regardless of occupant load",
+      "correct_answer": "By dividing occupant load across the tabulated occupancy schedule",
+      "explanation_seed": "Minimum fixture counts come directly from the occupancy schedule rows for each gender and use group.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-27",
+          "code_ref": "UPC Table 422.1",
+          "paraphrased_text": "The occupancy schedule specifies fixture-to-occupant ratios for public assembly buildings.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-028",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-28",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000028",
+        "stem": "Which tabulated water supply fixture unit weight applies to a public flushometer water closet? (Table check #8)",
+        "type": "lookup",
+        "options": [
+          "10 WSFU",
+          "1 WSFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 610.3",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "1 WSFU",
+      "correct_answer": "10 WSFU",
+      "explanation_seed": "Flushometer valves demand higher peak instantaneous flow in the supply fixture schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-28",
+          "code_ref": "UPC Table 610.3",
+          "paraphrased_text": "Public flushometer closets carry a high WSFU schedule weight compared to tank-type residential closets.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-029",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-29",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000029",
+        "stem": "According to the fixture unit table, which drainage fixture unit rating applies to a standard private lavatory? (Table check #9)",
+        "type": "lookup",
+        "options": [
+          "1 DFU",
+          "4 DFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 709.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "4 DFU",
+      "correct_answer": "1 DFU",
+      "explanation_seed": "Private lavatories carry a lower table rating than water closets or multi-compartment sinks.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-29",
+          "code_ref": "IPC Table 709.1",
+          "paraphrased_text": "The drainage fixture unit table assigns smaller individual weights to private basin fixtures.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-030",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-30",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000030",
+        "stem": "Which maximum trap arm distance row applies to a 2-inch fixture drain sloped at standard grade? (Table check #10)",
+        "type": "lookup",
+        "options": [
+          "8 ft table allowance",
+          "24 ft table allowance",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 909.1",
+        "topic_slug": "vents-venting",
+        "difficulty": 2
+      },
+      "user_answer": "24 ft table allowance",
+      "correct_answer": "8 ft table allowance",
+      "explanation_seed": "Maximum trap-to-vent distances follow the tabulated pipe size and slope schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-30",
+          "code_ref": "IPC Table 909.1",
+          "paraphrased_text": "Smaller trap arms lose vent continuity beyond their tabulated maximum developed distance.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-031",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-31",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000031",
+        "stem": "In the minimum plumbing facilities table, how are assembly occupancy fixture counts determined? (Table check #11)",
+        "type": "lookup",
+        "options": [
+          "By dividing occupant load across the tabulated occupancy schedule",
+          "By installing one fixture regardless of occupant load",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 422.1",
+        "topic_slug": "fixtures-fittings",
+        "difficulty": 2
+      },
+      "user_answer": "By installing one fixture regardless of occupant load",
+      "correct_answer": "By dividing occupant load across the tabulated occupancy schedule",
+      "explanation_seed": "Minimum fixture counts come directly from the occupancy schedule rows for each gender and use group.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-31",
+          "code_ref": "UPC Table 422.1",
+          "paraphrased_text": "The occupancy schedule specifies fixture-to-occupant ratios for public assembly buildings.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-032",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-32",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000032",
+        "stem": "Which tabulated water supply fixture unit weight applies to a public flushometer water closet? (Table check #12)",
+        "type": "lookup",
+        "options": [
+          "10 WSFU",
+          "1 WSFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 610.3",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "1 WSFU",
+      "correct_answer": "10 WSFU",
+      "explanation_seed": "Flushometer valves demand higher peak instantaneous flow in the supply fixture schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-32",
+          "code_ref": "UPC Table 610.3",
+          "paraphrased_text": "Public flushometer closets carry a high WSFU schedule weight compared to tank-type residential closets.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-033",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-33",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000033",
+        "stem": "According to the fixture unit table, which drainage fixture unit rating applies to a standard private lavatory? (Table check #13)",
+        "type": "lookup",
+        "options": [
+          "1 DFU",
+          "4 DFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 709.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "4 DFU",
+      "correct_answer": "1 DFU",
+      "explanation_seed": "Private lavatories carry a lower table rating than water closets or multi-compartment sinks.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-33",
+          "code_ref": "IPC Table 709.1",
+          "paraphrased_text": "The drainage fixture unit table assigns smaller individual weights to private basin fixtures.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-034",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-34",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000034",
+        "stem": "Which maximum trap arm distance row applies to a 2-inch fixture drain sloped at standard grade? (Table check #14)",
+        "type": "lookup",
+        "options": [
+          "8 ft table allowance",
+          "24 ft table allowance",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "IPC Table 909.1",
+        "topic_slug": "vents-venting",
+        "difficulty": 2
+      },
+      "user_answer": "24 ft table allowance",
+      "correct_answer": "8 ft table allowance",
+      "explanation_seed": "Maximum trap-to-vent distances follow the tabulated pipe size and slope schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-34",
+          "code_ref": "IPC Table 909.1",
+          "paraphrased_text": "Smaller trap arms lose vent continuity beyond their tabulated maximum developed distance.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-035",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-35",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000035",
+        "stem": "In the minimum plumbing facilities table, how are assembly occupancy fixture counts determined? (Table check #15)",
+        "type": "lookup",
+        "options": [
+          "By dividing occupant load across the tabulated occupancy schedule",
+          "By installing one fixture regardless of occupant load",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 422.1",
+        "topic_slug": "fixtures-fittings",
+        "difficulty": 2
+      },
+      "user_answer": "By installing one fixture regardless of occupant load",
+      "correct_answer": "By dividing occupant load across the tabulated occupancy schedule",
+      "explanation_seed": "Minimum fixture counts come directly from the occupancy schedule rows for each gender and use group.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-35",
+          "code_ref": "UPC Table 422.1",
+          "paraphrased_text": "The occupancy schedule specifies fixture-to-occupant ratios for public assembly buildings.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-036",
+    "expected_error_type": "lookup",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-36",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000036",
+        "stem": "Which tabulated water supply fixture unit weight applies to a public flushometer water closet? (Table check #16)",
+        "type": "lookup",
+        "options": [
+          "10 WSFU",
+          "1 WSFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "UPC Table 610.3",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "1 WSFU",
+      "correct_answer": "10 WSFU",
+      "explanation_seed": "Flushometer valves demand higher peak instantaneous flow in the supply fixture schedule.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-l-36",
+          "code_ref": "UPC Table 610.3",
+          "paraphrased_text": "Public flushometer closets carry a high WSFU schedule weight compared to tank-type residential closets.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-037",
+    "expected_error_type": "lookup",
+    "insufficient_context": true,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-37",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000037",
+        "stem": "According to the fixture unit table, which drainage fixture unit rating applies to a standard private lavatory? (Table check #17)",
+        "type": "lookup",
+        "options": [
+          "1 DFU",
+          "4 DFU",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "4 DFU",
+      "correct_answer": "1 DFU",
+      "explanation_seed": "",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-038",
+    "expected_error_type": "lookup",
+    "insufficient_context": true,
+    "forbidden_verbatim_text": "Where flushometer valves are installed in public restrooms the minimum water supply fixture unit value listed in the schedule shall govern branch sizing.",
+    "input": {
+      "userId": "eval-user-38",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000038",
+        "stem": "Which maximum trap arm distance row applies to a 2-inch fixture drain sloped at standard grade? (Table check #18)",
+        "type": "lookup",
+        "options": [
+          "8 ft table allowance",
+          "24 ft table allowance",
+          "0.25 DFU",
+          "100 WSFU"
+        ],
+        "code_ref": "",
+        "topic_slug": "vents-venting",
+        "difficulty": 2
+      },
+      "user_answer": "24 ft table allowance",
+      "correct_answer": "8 ft table allowance",
+      "explanation_seed": "",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-039",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-39",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000039",
+        "stem": "Calculate the center-to-center travel for a 10-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "14.1 in",
+          "11.5 in",
+          "10 in",
+          "20 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "11.5 in",
+      "correct_answer": "14.1 in",
+      "explanation_seed": "Multiply 10 in by 1.414 to obtain 14.1 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 14.1,
+          "offset_in": 10
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 10 in",
+            "value": "10 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "10 * 1.414",
+            "value": "14.1 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-040",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-40",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000040",
+        "stem": "Calculate the center-to-center travel for a 12-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "17.0 in",
+          "13.8 in",
+          "12 in",
+          "24 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "13.8 in",
+      "correct_answer": "17.0 in",
+      "explanation_seed": "Multiply 12 in by 1.414 to obtain 17.0 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 17.0,
+          "offset_in": 12
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 12 in",
+            "value": "12 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "12 * 1.414",
+            "value": "17.0 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-041",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-41",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000041",
+        "stem": "Calculate the center-to-center travel for a 14-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "19.8 in",
+          "16.1 in",
+          "14 in",
+          "28 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "16.1 in",
+      "correct_answer": "19.8 in",
+      "explanation_seed": "Multiply 14 in by 1.414 to obtain 19.8 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 19.8,
+          "offset_in": 14
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 14 in",
+            "value": "14 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "14 * 1.414",
+            "value": "19.8 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-042",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-42",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000042",
+        "stem": "Calculate the center-to-center travel for a 16-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "22.6 in",
+          "18.4 in",
+          "16 in",
+          "32 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "18.4 in",
+      "correct_answer": "22.6 in",
+      "explanation_seed": "Multiply 16 in by 1.414 to obtain 22.6 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 22.6,
+          "offset_in": 16
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 16 in",
+            "value": "16 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "16 * 1.414",
+            "value": "22.6 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-043",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-43",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000043",
+        "stem": "Calculate the center-to-center travel for a 18-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "25.5 in",
+          "20.7 in",
+          "18 in",
+          "36 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "20.7 in",
+      "correct_answer": "25.5 in",
+      "explanation_seed": "Multiply 18 in by 1.414 to obtain 25.5 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 25.5,
+          "offset_in": 18
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 18 in",
+            "value": "18 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "18 * 1.414",
+            "value": "25.5 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-044",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-44",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000044",
+        "stem": "Calculate the center-to-center travel for a 20-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "28.3 in",
+          "23.0 in",
+          "20 in",
+          "40 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "23.0 in",
+      "correct_answer": "28.3 in",
+      "explanation_seed": "Multiply 20 in by 1.414 to obtain 28.3 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 28.3,
+          "offset_in": 20
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 20 in",
+            "value": "20 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "20 * 1.414",
+            "value": "28.3 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-045",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-45",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000045",
+        "stem": "Calculate the center-to-center travel for a 22-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "31.1 in",
+          "25.3 in",
+          "22 in",
+          "44 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "25.3 in",
+      "correct_answer": "31.1 in",
+      "explanation_seed": "Multiply 22 in by 1.414 to obtain 31.1 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 31.1,
+          "offset_in": 22
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 22 in",
+            "value": "22 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "22 * 1.414",
+            "value": "31.1 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-046",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-46",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000046",
+        "stem": "Calculate the center-to-center travel for a 24-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "33.9 in",
+          "27.6 in",
+          "24 in",
+          "48 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "27.6 in",
+      "correct_answer": "33.9 in",
+      "explanation_seed": "Multiply 24 in by 1.414 to obtain 33.9 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 33.9,
+          "offset_in": 24
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 24 in",
+            "value": "24 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "24 * 1.414",
+            "value": "33.9 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-047",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-47",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000047",
+        "stem": "Calculate the center-to-center travel for a 26-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "36.8 in",
+          "29.9 in",
+          "26 in",
+          "52 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "29.9 in",
+      "correct_answer": "36.8 in",
+      "explanation_seed": "Multiply 26 in by 1.414 to obtain 36.8 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 36.8,
+          "offset_in": 26
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 26 in",
+            "value": "26 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "26 * 1.414",
+            "value": "36.8 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-048",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-48",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000048",
+        "stem": "Calculate the center-to-center travel for a 28-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "39.6 in",
+          "32.2 in",
+          "28 in",
+          "56 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "32.2 in",
+      "correct_answer": "39.6 in",
+      "explanation_seed": "Multiply 28 in by 1.414 to obtain 39.6 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 39.6,
+          "offset_in": 28
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 28 in",
+            "value": "28 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "28 * 1.414",
+            "value": "39.6 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-049",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-49",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000049",
+        "stem": "Calculate the center-to-center travel for a 30-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "42.4 in",
+          "34.5 in",
+          "30 in",
+          "60 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "34.5 in",
+      "correct_answer": "42.4 in",
+      "explanation_seed": "Multiply 30 in by 1.414 to obtain 42.4 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 42.4,
+          "offset_in": 30
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 30 in",
+            "value": "30 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "30 * 1.414",
+            "value": "42.4 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-050",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-50",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000050",
+        "stem": "Calculate the center-to-center travel for a 32-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "45.2 in",
+          "36.8 in",
+          "32 in",
+          "64 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "36.8 in",
+      "correct_answer": "45.2 in",
+      "explanation_seed": "Multiply 32 in by 1.414 to obtain 45.2 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 45.2,
+          "offset_in": 32
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 32 in",
+            "value": "32 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "32 * 1.414",
+            "value": "45.2 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-051",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-51",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000051",
+        "stem": "Calculate the center-to-center travel for a 34-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "48.1 in",
+          "39.1 in",
+          "34 in",
+          "68 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "39.1 in",
+      "correct_answer": "48.1 in",
+      "explanation_seed": "Multiply 34 in by 1.414 to obtain 48.1 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 48.1,
+          "offset_in": 34
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 34 in",
+            "value": "34 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "34 * 1.414",
+            "value": "48.1 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-052",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-52",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000052",
+        "stem": "Calculate the center-to-center travel for a 36-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "50.9 in",
+          "41.4 in",
+          "36 in",
+          "72 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "41.4 in",
+      "correct_answer": "50.9 in",
+      "explanation_seed": "Multiply 36 in by 1.414 to obtain 50.9 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 50.9,
+          "offset_in": 36
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 36 in",
+            "value": "36 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "36 * 1.414",
+            "value": "50.9 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-053",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-53",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000053",
+        "stem": "Calculate the center-to-center travel for a 38-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "53.7 in",
+          "43.7 in",
+          "38 in",
+          "76 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "43.7 in",
+      "correct_answer": "53.7 in",
+      "explanation_seed": "Multiply 38 in by 1.414 to obtain 53.7 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 53.7,
+          "offset_in": 38
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 38 in",
+            "value": "38 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "38 * 1.414",
+            "value": "53.7 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-054",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-54",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000054",
+        "stem": "Calculate the center-to-center travel for a 40-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "56.6 in",
+          "46.0 in",
+          "40 in",
+          "80 in"
+        ],
+        "code_ref": "UPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "46.0 in",
+      "correct_answer": "56.6 in",
+      "explanation_seed": "Multiply 40 in by 1.414 to obtain 56.6 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 56.6,
+          "offset_in": 40
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 40 in",
+            "value": "40 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "40 * 1.414",
+            "value": "56.6 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-055",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-55",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000055",
+        "stem": "Calculate the center-to-center travel for a 42-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "59.4 in",
+          "48.3 in",
+          "42 in",
+          "84 in"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "48.3 in",
+      "correct_answer": "59.4 in",
+      "explanation_seed": "Multiply 42 in by 1.414 to obtain 59.4 in travel.",
+      "retrieved_chunks": [],
+      "calc_context": {
+        "result": {
+          "travel_in": 59.4,
+          "offset_in": 42
+        },
+        "steps": [
+          {
+            "step": 1,
+            "label": "Identify 45-degree offset",
+            "formula": "offset = 42 in",
+            "value": "42 in"
+          },
+          {
+            "step": 2,
+            "label": "Multiply by 1.414 factor",
+            "formula": "42 * 1.414",
+            "value": "59.4 in"
+          }
+        ],
+        "assumptions": [
+          "45-degree elbows used for parallel pipe offset"
+        ]
+      }
+    }
+  },
+  {
+    "id": "eval-056",
+    "expected_error_type": "arithmetic",
+    "insufficient_context": true,
+    "forbidden_verbatim_text": "The diagonal center to center distance for any forty five degree offset is determined strictly by multiplying the perpendicular offset by the square root of two.",
+    "input": {
+      "userId": "eval-user-56",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000056",
+        "stem": "Calculate the center-to-center travel for a 44-in 45-degree pipe offset.",
+        "type": "calc",
+        "options": [
+          "62.2 in",
+          "50.6 in",
+          "44 in",
+          "88 in"
+        ],
+        "code_ref": "",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 3
+      },
+      "user_answer": "50.6 in",
+      "correct_answer": "62.2 in",
+      "explanation_seed": "",
+      "retrieved_chunks": [],
+      "calc_context": null
+    }
+  },
+  {
+    "id": "eval-057",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-57",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000057",
+        "stem": "Which fitting is NEVER permitted on its back as a horizontal-to-horizontal drainage wye? (Check #1)",
+        "type": "scenario",
+        "options": [
+          "Short-turn sanitary tee",
+          "Long-sweep 45-degree wye and eighth bend",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 706.3",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Long-sweep 45-degree wye and eighth bend",
+      "correct_answer": "Short-turn sanitary tee",
+      "explanation_seed": "The question asks which fitting is prohibited; a sanitary tee on its back blocks drainage sweep.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-57",
+          "code_ref": "IPC 706.3",
+          "paraphrased_text": "Long-sweep wyes are allowed horizontally, whereas short sanitary tees are restricted to vertical drain takeoffs.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-058",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-58",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000058",
+        "stem": "Where must control shutoff valves NOT be installed relative to an atmospheric vacuum breaker? (Check #2)",
+        "type": "scenario",
+        "options": [
+          "Downstream of the atmospheric vacuum breaker",
+          "Upstream of the atmospheric vacuum breaker",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 608.13",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 3
+      },
+      "user_answer": "Upstream of the atmospheric vacuum breaker",
+      "correct_answer": "Downstream of the atmospheric vacuum breaker",
+      "explanation_seed": "Shutoff valves downstream keep an AVB pressurized continuously, violating its non-pressure design.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-58",
+          "code_ref": "IPC 608.13",
+          "paraphrased_text": "All zone valves belong upstream of an AVB so atmospheric relief operates whenever supply shuts off.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-059",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-59",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000059",
+        "stem": "Why must secondary emergency roof drains NOT connect into the primary storm conductor? (Check #3)",
+        "type": "scenario",
+        "options": [
+          "So a primary line blockage does not disable overflow drainage",
+          "To equalize potable hot and cold water pressure",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 1101.12",
+        "topic_slug": "storm-drainage",
+        "difficulty": 3
+      },
+      "user_answer": "To equalize potable hot and cold water pressure",
+      "correct_answer": "So a primary line blockage does not disable overflow drainage",
+      "explanation_seed": "Secondary roof drainage stays completely separate from primary leaders to protect the roof structure.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-59",
+          "code_ref": "UPC 1101.12",
+          "paraphrased_text": "Independent overflow conductors guarantee roof ponding relief even when primary drains clog.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-060",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-60",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000060",
+        "stem": "Which location does NOT exempt a horizontal building drain from cleanout spacing requirements? (Check #4)",
+        "type": "scenario",
+        "options": [
+          "A concealed buried trunk exceeding maximum spacing intervals",
+          "An accessible upstream end fitting",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 707.4",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 3
+      },
+      "user_answer": "An accessible upstream end fitting",
+      "correct_answer": "A concealed buried trunk exceeding maximum spacing intervals",
+      "explanation_seed": "The prompt asks where cleanouts remain mandatory; long buried trunks require cleanout access.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-60",
+          "code_ref": "UPC 707.4",
+          "paraphrased_text": "Accessible cleanouts must be provided along horizontal building drains at required spacing and direction changes.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-061",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-61",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000061",
+        "stem": "Which fitting is NEVER permitted on its back as a horizontal-to-horizontal drainage wye? (Check #5)",
+        "type": "scenario",
+        "options": [
+          "Short-turn sanitary tee",
+          "Long-sweep 45-degree wye and eighth bend",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 706.3",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Long-sweep 45-degree wye and eighth bend",
+      "correct_answer": "Short-turn sanitary tee",
+      "explanation_seed": "The question asks which fitting is prohibited; a sanitary tee on its back blocks drainage sweep.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-61",
+          "code_ref": "IPC 706.3",
+          "paraphrased_text": "Long-sweep wyes are allowed horizontally, whereas short sanitary tees are restricted to vertical drain takeoffs.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-062",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-62",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000062",
+        "stem": "Where must control shutoff valves NOT be installed relative to an atmospheric vacuum breaker? (Check #6)",
+        "type": "scenario",
+        "options": [
+          "Downstream of the atmospheric vacuum breaker",
+          "Upstream of the atmospheric vacuum breaker",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 608.13",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 3
+      },
+      "user_answer": "Upstream of the atmospheric vacuum breaker",
+      "correct_answer": "Downstream of the atmospheric vacuum breaker",
+      "explanation_seed": "Shutoff valves downstream keep an AVB pressurized continuously, violating its non-pressure design.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-62",
+          "code_ref": "IPC 608.13",
+          "paraphrased_text": "All zone valves belong upstream of an AVB so atmospheric relief operates whenever supply shuts off.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-063",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-63",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000063",
+        "stem": "Why must secondary emergency roof drains NOT connect into the primary storm conductor? (Check #7)",
+        "type": "scenario",
+        "options": [
+          "So a primary line blockage does not disable overflow drainage",
+          "To equalize potable hot and cold water pressure",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 1101.12",
+        "topic_slug": "storm-drainage",
+        "difficulty": 3
+      },
+      "user_answer": "To equalize potable hot and cold water pressure",
+      "correct_answer": "So a primary line blockage does not disable overflow drainage",
+      "explanation_seed": "Secondary roof drainage stays completely separate from primary leaders to protect the roof structure.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-63",
+          "code_ref": "UPC 1101.12",
+          "paraphrased_text": "Independent overflow conductors guarantee roof ponding relief even when primary drains clog.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-064",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-64",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000064",
+        "stem": "Which location does NOT exempt a horizontal building drain from cleanout spacing requirements? (Check #8)",
+        "type": "scenario",
+        "options": [
+          "A concealed buried trunk exceeding maximum spacing intervals",
+          "An accessible upstream end fitting",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 707.4",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 3
+      },
+      "user_answer": "An accessible upstream end fitting",
+      "correct_answer": "A concealed buried trunk exceeding maximum spacing intervals",
+      "explanation_seed": "The prompt asks where cleanouts remain mandatory; long buried trunks require cleanout access.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-64",
+          "code_ref": "UPC 707.4",
+          "paraphrased_text": "Accessible cleanouts must be provided along horizontal building drains at required spacing and direction changes.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-065",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-65",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000065",
+        "stem": "Which fitting is NEVER permitted on its back as a horizontal-to-horizontal drainage wye? (Check #9)",
+        "type": "scenario",
+        "options": [
+          "Short-turn sanitary tee",
+          "Long-sweep 45-degree wye and eighth bend",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 706.3",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Long-sweep 45-degree wye and eighth bend",
+      "correct_answer": "Short-turn sanitary tee",
+      "explanation_seed": "The question asks which fitting is prohibited; a sanitary tee on its back blocks drainage sweep.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-65",
+          "code_ref": "IPC 706.3",
+          "paraphrased_text": "Long-sweep wyes are allowed horizontally, whereas short sanitary tees are restricted to vertical drain takeoffs.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-066",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-66",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000066",
+        "stem": "Where must control shutoff valves NOT be installed relative to an atmospheric vacuum breaker? (Check #10)",
+        "type": "scenario",
+        "options": [
+          "Downstream of the atmospheric vacuum breaker",
+          "Upstream of the atmospheric vacuum breaker",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 608.13",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 3
+      },
+      "user_answer": "Upstream of the atmospheric vacuum breaker",
+      "correct_answer": "Downstream of the atmospheric vacuum breaker",
+      "explanation_seed": "Shutoff valves downstream keep an AVB pressurized continuously, violating its non-pressure design.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-66",
+          "code_ref": "IPC 608.13",
+          "paraphrased_text": "All zone valves belong upstream of an AVB so atmospheric relief operates whenever supply shuts off.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-067",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-67",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000067",
+        "stem": "Why must secondary emergency roof drains NOT connect into the primary storm conductor? (Check #11)",
+        "type": "scenario",
+        "options": [
+          "So a primary line blockage does not disable overflow drainage",
+          "To equalize potable hot and cold water pressure",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 1101.12",
+        "topic_slug": "storm-drainage",
+        "difficulty": 3
+      },
+      "user_answer": "To equalize potable hot and cold water pressure",
+      "correct_answer": "So a primary line blockage does not disable overflow drainage",
+      "explanation_seed": "Secondary roof drainage stays completely separate from primary leaders to protect the roof structure.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-67",
+          "code_ref": "UPC 1101.12",
+          "paraphrased_text": "Independent overflow conductors guarantee roof ponding relief even when primary drains clog.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-068",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-68",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000068",
+        "stem": "Which location does NOT exempt a horizontal building drain from cleanout spacing requirements? (Check #12)",
+        "type": "scenario",
+        "options": [
+          "A concealed buried trunk exceeding maximum spacing intervals",
+          "An accessible upstream end fitting",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 707.4",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 3
+      },
+      "user_answer": "An accessible upstream end fitting",
+      "correct_answer": "A concealed buried trunk exceeding maximum spacing intervals",
+      "explanation_seed": "The prompt asks where cleanouts remain mandatory; long buried trunks require cleanout access.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-68",
+          "code_ref": "UPC 707.4",
+          "paraphrased_text": "Accessible cleanouts must be provided along horizontal building drains at required spacing and direction changes.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-069",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-69",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000069",
+        "stem": "Which fitting is NEVER permitted on its back as a horizontal-to-horizontal drainage wye? (Check #13)",
+        "type": "scenario",
+        "options": [
+          "Short-turn sanitary tee",
+          "Long-sweep 45-degree wye and eighth bend",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 706.3",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Long-sweep 45-degree wye and eighth bend",
+      "correct_answer": "Short-turn sanitary tee",
+      "explanation_seed": "The question asks which fitting is prohibited; a sanitary tee on its back blocks drainage sweep.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-69",
+          "code_ref": "IPC 706.3",
+          "paraphrased_text": "Long-sweep wyes are allowed horizontally, whereas short sanitary tees are restricted to vertical drain takeoffs.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-070",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-70",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000070",
+        "stem": "Where must control shutoff valves NOT be installed relative to an atmospheric vacuum breaker? (Check #14)",
+        "type": "scenario",
+        "options": [
+          "Downstream of the atmospheric vacuum breaker",
+          "Upstream of the atmospheric vacuum breaker",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "IPC 608.13",
+        "topic_slug": "backflow-cross-connection",
+        "difficulty": 3
+      },
+      "user_answer": "Upstream of the atmospheric vacuum breaker",
+      "correct_answer": "Downstream of the atmospheric vacuum breaker",
+      "explanation_seed": "Shutoff valves downstream keep an AVB pressurized continuously, violating its non-pressure design.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-70",
+          "code_ref": "IPC 608.13",
+          "paraphrased_text": "All zone valves belong upstream of an AVB so atmospheric relief operates whenever supply shuts off.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-071",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-71",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000071",
+        "stem": "Why must secondary emergency roof drains NOT connect into the primary storm conductor? (Check #15)",
+        "type": "scenario",
+        "options": [
+          "So a primary line blockage does not disable overflow drainage",
+          "To equalize potable hot and cold water pressure",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 1101.12",
+        "topic_slug": "storm-drainage",
+        "difficulty": 3
+      },
+      "user_answer": "To equalize potable hot and cold water pressure",
+      "correct_answer": "So a primary line blockage does not disable overflow drainage",
+      "explanation_seed": "Secondary roof drainage stays completely separate from primary leaders to protect the roof structure.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-71",
+          "code_ref": "UPC 1101.12",
+          "paraphrased_text": "Independent overflow conductors guarantee roof ponding relief even when primary drains clog.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-072",
+    "expected_error_type": "misread",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "No shutoff valve or control device shall be installed downstream of an atmospheric vacuum breaker under continuous pressure operation.",
+    "input": {
+      "userId": "eval-user-72",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000072",
+        "stem": "Which location does NOT exempt a horizontal building drain from cleanout spacing requirements? (Check #16)",
+        "type": "scenario",
+        "options": [
+          "A concealed buried trunk exceeding maximum spacing intervals",
+          "An accessible upstream end fitting",
+          "Dielectric isolation union",
+          "Expansion tank"
+        ],
+        "code_ref": "UPC 707.4",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 3
+      },
+      "user_answer": "An accessible upstream end fitting",
+      "correct_answer": "A concealed buried trunk exceeding maximum spacing intervals",
+      "explanation_seed": "The prompt asks where cleanouts remain mandatory; long buried trunks require cleanout access.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-m-72",
+          "code_ref": "UPC 707.4",
+          "paraphrased_text": "Accessible cleanouts must be provided along horizontal building drains at required spacing and direction changes.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-073",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-73",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000073",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #1?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-73",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-73",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-074",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-74",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000074",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #2?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-74",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-74",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-075",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-75",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000075",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #3?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-75",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-75",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-076",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-76",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000076",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #4?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-76",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-76",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-077",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-77",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000077",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #5?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-77",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-77",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-078",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-78",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000078",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #6?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-78",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-78",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-079",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-79",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000079",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #7?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-79",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-79",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-080",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-80",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000080",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #8?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-80",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-80",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-081",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-81",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000081",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #9?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-81",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-81",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-082",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-82",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000082",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #10?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-82",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-82",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-083",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-83",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000083",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #11?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-83",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-83",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-084",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-84",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000084",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #12?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-84",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-84",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-085",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-85",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000085",
+        "stem": "Under IPC 2021, which venting or sizing rule applies to this installation #13?",
+        "type": "mcq",
+        "options": [
+          "Follow IPC 2021 adopted rule",
+          "Apply UPC 2024 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "IPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply UPC 2024 alternate rule",
+      "correct_answer": "Follow IPC 2021 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts IPC 2021 rules, unlike UPC 2024.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-85",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "Active IPC 2021 guidance requires following the adopted board venting schedule.",
+          "code_family": "IPC",
+          "edition": "2021"
+        },
+        {
+          "id": "chunk-e-other-85",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "UPC 2024 uses a distinct sizing threshold.",
+          "code_family": "UPC",
+          "edition": "2024"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-086",
+    "expected_error_type": "edition_confusion",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Vent sizing tables and air admittance valve allowances differ substantially between competing model plumbing codes and must be verified per state adoption.",
+    "input": {
+      "userId": "eval-user-86",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000086",
+        "stem": "Under UPC 2024, which venting or sizing rule applies to this installation #14?",
+        "type": "mcq",
+        "options": [
+          "Follow UPC 2024 adopted rule",
+          "Apply IPC 2021 alternate rule",
+          "Omit fixture traps entirely",
+          "Connect storm water to potable cold"
+        ],
+        "code_ref": "UPC Ch. 9",
+        "topic_slug": "vents-venting",
+        "difficulty": 3
+      },
+      "user_answer": "Apply IPC 2021 alternate rule",
+      "correct_answer": "Follow UPC 2024 adopted rule",
+      "explanation_seed": "Active jurisdiction adopts UPC 2024 rules, unlike IPC 2021.",
+      "retrieved_chunks": [
+        {
+          "id": "chunk-e-active-86",
+          "code_ref": "UPC Ch. 9",
+          "paraphrased_text": "Active UPC 2024 guidance requires following the adopted board venting schedule.",
+          "code_family": "UPC",
+          "edition": "2024"
+        },
+        {
+          "id": "chunk-e-other-86",
+          "code_ref": "IPC Ch. 9",
+          "paraphrased_text": "IPC 2021 uses a distinct sizing threshold.",
+          "code_family": "IPC",
+          "edition": "2021"
+        }
+      ]
+    }
+  },
+  {
+    "id": "eval-087",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-87",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000087",
+        "stem": "A 3-inch drain runs 48 feet at 1/4 inch per foot fall. What is the total vertical drop in inches? (Unit check #1)",
+        "type": "calc",
+        "options": [
+          "12 inches",
+          "12 feet",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "12 feet",
+      "correct_answer": "12 inches",
+      "explanation_seed": "48 ft * 0.25 in/ft equals 12 inches, not 12 feet.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-088",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-88",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000088",
+        "stem": "A gas appliance requires 120,000 BTU/h with 1000 BTU/cf gas. What is the demand in CFH? (Unit check #2)",
+        "type": "calc",
+        "options": [
+          "120 CFH",
+          "120,000 CFH",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "UPC Ch. 6",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "120,000 CFH",
+      "correct_answer": "120 CFH",
+      "explanation_seed": "Divide 120,000 BTU/h by 1000 BTU/cf to obtain 120 CFH.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-089",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-89",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000089",
+        "stem": "A vertical water column rises 20 feet. At 0.433 psi per foot, what is the static head pressure in psi? (Unit check #3)",
+        "type": "calc",
+        "options": [
+          "8.66 psi",
+          "8.66 ft",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 2
+      },
+      "user_answer": "8.66 ft",
+      "correct_answer": "8.66 psi",
+      "explanation_seed": "Multiplying 20 ft by 0.433 psi/ft produces 8.66 psi pressure.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-090",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-90",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000090",
+        "stem": "A 3-inch drain runs 48 feet at 1/4 inch per foot fall. What is the total vertical drop in inches? (Unit check #4)",
+        "type": "calc",
+        "options": [
+          "12 inches",
+          "12 feet",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "12 feet",
+      "correct_answer": "12 inches",
+      "explanation_seed": "48 ft * 0.25 in/ft equals 12 inches, not 12 feet.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-091",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-91",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000091",
+        "stem": "A gas appliance requires 120,000 BTU/h with 1000 BTU/cf gas. What is the demand in CFH? (Unit check #5)",
+        "type": "calc",
+        "options": [
+          "120 CFH",
+          "120,000 CFH",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "UPC Ch. 6",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "120,000 CFH",
+      "correct_answer": "120 CFH",
+      "explanation_seed": "Divide 120,000 BTU/h by 1000 BTU/cf to obtain 120 CFH.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-092",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-92",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000092",
+        "stem": "A vertical water column rises 20 feet. At 0.433 psi per foot, what is the static head pressure in psi? (Unit check #6)",
+        "type": "calc",
+        "options": [
+          "8.66 psi",
+          "8.66 ft",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 2
+      },
+      "user_answer": "8.66 ft",
+      "correct_answer": "8.66 psi",
+      "explanation_seed": "Multiplying 20 ft by 0.433 psi/ft produces 8.66 psi pressure.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-093",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-93",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000093",
+        "stem": "A 3-inch drain runs 48 feet at 1/4 inch per foot fall. What is the total vertical drop in inches? (Unit check #7)",
+        "type": "calc",
+        "options": [
+          "12 inches",
+          "12 feet",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "12 feet",
+      "correct_answer": "12 inches",
+      "explanation_seed": "48 ft * 0.25 in/ft equals 12 inches, not 12 feet.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-094",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-94",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000094",
+        "stem": "A gas appliance requires 120,000 BTU/h with 1000 BTU/cf gas. What is the demand in CFH? (Unit check #8)",
+        "type": "calc",
+        "options": [
+          "120 CFH",
+          "120,000 CFH",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "UPC Ch. 6",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "120,000 CFH",
+      "correct_answer": "120 CFH",
+      "explanation_seed": "Divide 120,000 BTU/h by 1000 BTU/cf to obtain 120 CFH.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-095",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-95",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000095",
+        "stem": "A vertical water column rises 20 feet. At 0.433 psi per foot, what is the static head pressure in psi? (Unit check #9)",
+        "type": "calc",
+        "options": [
+          "8.66 psi",
+          "8.66 ft",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 2
+      },
+      "user_answer": "8.66 ft",
+      "correct_answer": "8.66 psi",
+      "explanation_seed": "Multiplying 20 ft by 0.433 psi/ft produces 8.66 psi pressure.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-096",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-96",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000096",
+        "stem": "A 3-inch drain runs 48 feet at 1/4 inch per foot fall. What is the total vertical drop in inches? (Unit check #10)",
+        "type": "calc",
+        "options": [
+          "12 inches",
+          "12 feet",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "12 feet",
+      "correct_answer": "12 inches",
+      "explanation_seed": "48 ft * 0.25 in/ft equals 12 inches, not 12 feet.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-097",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-97",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000097",
+        "stem": "A gas appliance requires 120,000 BTU/h with 1000 BTU/cf gas. What is the demand in CFH? (Unit check #11)",
+        "type": "calc",
+        "options": [
+          "120 CFH",
+          "120,000 CFH",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "UPC Ch. 6",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "120,000 CFH",
+      "correct_answer": "120 CFH",
+      "explanation_seed": "Divide 120,000 BTU/h by 1000 BTU/cf to obtain 120 CFH.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-098",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-98",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000098",
+        "stem": "A vertical water column rises 20 feet. At 0.433 psi per foot, what is the static head pressure in psi? (Unit check #12)",
+        "type": "calc",
+        "options": [
+          "8.66 psi",
+          "8.66 ft",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC Ch. 7",
+        "topic_slug": "isometric-math-special",
+        "difficulty": 2
+      },
+      "user_answer": "8.66 ft",
+      "correct_answer": "8.66 psi",
+      "explanation_seed": "Multiplying 20 ft by 0.433 psi/ft produces 8.66 psi pressure.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-099",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-99",
+      "code_family": "IPC",
+      "edition": "2021",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000099",
+        "stem": "A 3-inch drain runs 48 feet at 1/4 inch per foot fall. What is the total vertical drop in inches? (Unit check #13)",
+        "type": "calc",
+        "options": [
+          "12 inches",
+          "12 feet",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "IPC 704.1",
+        "topic_slug": "sanitary-drainage-dwv",
+        "difficulty": 2
+      },
+      "user_answer": "12 feet",
+      "correct_answer": "12 inches",
+      "explanation_seed": "48 ft * 0.25 in/ft equals 12 inches, not 12 feet.",
+      "retrieved_chunks": []
+    }
+  },
+  {
+    "id": "eval-100",
+    "expected_error_type": "unit",
+    "insufficient_context": false,
+    "forbidden_verbatim_text": "Total vertical fall along a horizontal building drain is calculated by multiplying the run length in feet by the minimum pitch in inches per foot.",
+    "input": {
+      "userId": "eval-user-100",
+      "code_family": "UPC",
+      "edition": "2024",
+      "question": {
+        "id": "81000000-0000-4000-8000-000000000100",
+        "stem": "A gas appliance requires 120,000 BTU/h with 1000 BTU/cf gas. What is the demand in CFH? (Unit check #14)",
+        "type": "calc",
+        "options": [
+          "120 CFH",
+          "120,000 CFH",
+          "1.5 gpm",
+          "45 degrees"
+        ],
+        "code_ref": "UPC Ch. 6",
+        "topic_slug": "water-supply-distribution",
+        "difficulty": 2
+      },
+      "user_answer": "120,000 CFH",
+      "correct_answer": "120 CFH",
+      "explanation_seed": "Divide 120,000 BTU/h by 1000 BTU/cf to obtain 120 CFH.",
+      "retrieved_chunks": []
+    }
+  }
+]
