@@ -83,6 +83,11 @@ html[data-theme="light"] {
 }
 
 @layer base {
+  html,
+  body {
+    font-variant-numeric: tabular-nums;
+  }
+
   html {
     background-color: rgb(var(--bg));
     color: rgb(var(--ink));
@@ -204,7 +209,7 @@ html[data-reduce-motion="true"] *::after {
     box-shadow: inset 0 1px 0 0 var(--hl), var(--shadow-1);
   }
 
-  .bento-card:hover {
+  .bento-card:is(a, button, .bento-interactive):hover {
     transform: translateY(-2px);
     border-color: rgb(var(--accent) / 0.45);
   }

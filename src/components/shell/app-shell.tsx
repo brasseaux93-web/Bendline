@@ -42,7 +42,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <div className="order-3 flex w-full items-center gap-2 pb-1 lg:order-2 lg:w-auto lg:pb-0">
             <Link
               href="/onboarding"
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-line-strong bg-elevated/80 px-3 text-caption text-ink-primary transition-colors hover:border-accent-cyan"
+              className="inline-flex min-h-12 items-center gap-1.5 rounded-full border border-line-strong bg-elevated/80 px-3.5 text-caption text-ink-primary transition-colors hover:border-accent-cyan"
             >
               <span className="font-mono font-semibold text-accent-cyan">{activeJurisdiction.state}</span>
               <span className="text-ink-secondary">{activeJurisdiction.code_family} {activeJurisdiction.edition}</span>
@@ -52,7 +52,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             {activeJurisdiction.open_book && (
               <Link
                 href="/navigate"
-                className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-accent-emerald/50 bg-accent-emerald/10 px-3 text-caption font-semibold text-accent-emerald transition-colors hover:border-accent-emerald"
+                className="inline-flex min-h-12 items-center gap-1.5 rounded-full border border-accent-emerald/50 bg-accent-emerald/10 px-3.5 text-caption font-semibold text-accent-emerald transition-colors hover:border-accent-emerald"
               >
                 <BookOpen className="h-3.5 w-3.5" strokeWidth={1.75} aria-hidden="true" />
                 Code Nav

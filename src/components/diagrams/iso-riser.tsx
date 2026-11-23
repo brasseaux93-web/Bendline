@@ -1,6 +1,6 @@
 "use client";
 
-import { useId } from "react";
+import { useEffect, useId, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 
 const S = 30;
@@ -43,20 +43,23 @@ function Node({ p, color }: { p: P3; color: string }) {
 }
 
 function Callout({ from, at, text, tone, side }: { from: [number, number]; at: [number, number]; text: string; tone: string; side: "l" | "r" }) {
-  const w = text.length * 6.2 + 14;
+  const w = text.length * 8 + 18;
   const x = side === "r" ? at[0] : at[0] - w;
   return (
     <g>
       <path d={`M${from[0]} ${from[1]} L${at[0]} ${at[1]}`} stroke={tone} strokeWidth={1} strokeDasharray="2 3" opacity={0.85} />
-      <rect x={x} y={at[1] - 9} width={w} height={18} rx={9} fill="rgb(var(--bg-elevated))" stroke={tone} strokeOpacity={0.6} />
-      <text x={x + 7} y={at[1] + 3.5} className="font-mono" fontSize={10} fill="rgb(var(--ink))">{text}</text>
+      <rect x={x} y={at[1] - 12} width={w} height={24} rx={12} fill="rgb(var(--bg-elevated))" stroke={tone} strokeOpacity={0.7} />
+      <text x={x + 9} y={at[1] + 4.5} className="font-mono" fontSize={13} fontWeight={500} fill="rgb(var(--ink))">{text}</text>
     </g>
   );
 }
 
 export function IsoRiser({ still = false }: { still?: boolean }) {
   const reduce = useReducedMotion();
-  const live = !reduce && !still;
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const live = mounted && !reduce && !still;
+  const mode = live ? "live" : "still";
   const uid = useId().replace(/:/g, "");
   const A = "rgb(var(--primary))";
   const B = "rgb(var(--accent))";
@@ -70,7 +73,13 @@ export function IsoRiser({ still = false }: { still?: boolean }) {
   const cap = proj([2, 0, 5.1]);
 
   return (
-    <svg viewBox="0 0 380 310" className="h-auto w-full" role="img" aria-label="Isometric drain, waste and vent riser: building drain sloping to the sewer, 3 inch stack, water closet and lavatory wet-vent branches, cleanout and vent terminal">
+    <svg
+      viewBox="0 0 380 310"
+      className="h-auto w-full"
+      style={{ opacity: mounted ? 1 : 0 }}
+      role="img"
+      aria-label="Isometric drain, waste and vent riser: building drain sloping to the sewer, 3 inch stack, water closet and lavatory wet-vent branches, cleanout and vent terminal"
+    >
       <defs>
         <radialGradient id={`g-${uid}`} cx="50%" cy="55%" r="55%">
           <stop offset="0.35" stopColor="#fff" />
@@ -88,12 +97,12 @@ export function IsoRiser({ still = false }: { still?: boolean }) {
         ))}
       </g>
 
-      <Pipe d={path([[0, 0, 0], [6, 0, 0]])} color={A} w={7} delay={0.1} live={live} />
-      <Pipe d={path([[2, 2.5, 0], [2, 0, 0]])} color={A} w={7} delay={0.5} live={live} />
-      <Pipe d={path([[2, 0, 0], [2, 0, 4.5]])} color={B} w={6} delay={0.3} live={live} />
-      <Pipe d={path([[2, 1.6, 2.5], [2, 0, 2.5]])} color={G} w={5} delay={0.8} live={live} />
-      <Pipe d={path([[0, 0, 0], [0, 0, 0.9]])} color={A} w={5} delay={1} live={live} />
-      <Pipe d={path([[2, 0, 4.5], [2, 0, 5.1]])} color={B} w={4} delay={1.1} live={live} />
+      <Pipe key={`a${mode}`} d={path([[0, 0, 0], [6, 0, 0]])} color={A} w={7} delay={0.1} live={live} />
+      <Pipe key={`b${mode}`} d={path([[2, 2.5, 0], [2, 0, 0]])} color={A} w={7} delay={0.5} live={live} />
+      <Pipe key={`c${mode}`} d={path([[2, 0, 0], [2, 0, 4.5]])} color={B} w={6} delay={0.3} live={live} />
+      <Pipe key={`d${mode}`} d={path([[2, 1.6, 2.5], [2, 0, 2.5]])} color={G} w={5} delay={0.8} live={live} />
+      <Pipe key={`e${mode}`} d={path([[0, 0, 0], [0, 0, 0.9]])} color={A} w={5} delay={1} live={live} />
+      <Pipe key={`f${mode}`} d={path([[2, 0, 4.5], [2, 0, 5.1]])} color={B} w={4} delay={1.1} live={live} />
 
       <Node p={[2, 0, 0]} color={A} />
       <Node p={[2, 0, 2.5]} color={G} />
@@ -110,7 +119,7 @@ export function IsoRiser({ still = false }: { still?: boolean }) {
       <Callout from={proj([2, 0.8, 2.5])} at={[150, 100]} text="LAV 1½″" tone={G} side="l" />
       <Callout from={proj([0, 0, 0.9])} at={[120, 140]} text="CLEANOUT" tone={A} side="l" />
       <Callout from={proj([2, 2.5, 0])} at={[140, 246]} text="WC 3″" tone={A} side="l" />
-      <Callout from={proj([4.8, 0, 0])} at={[280, 262]} text="DRAIN 3″ · ¼″/ft" tone={A} side="l" />
+      <Callout from={proj([4.8, 0, 0])} at={[300, 282]} text="DRAIN 3″ · ¼″/ft" tone={A} side="l" />
     </svg>
   );
 }
