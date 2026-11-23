@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability Disclosure
+    url: https://github.com/brasseaux93-web/Bendline/security/advisories/new
+    about: Please report authentication, RLS, billing, or privacy vulnerabilities privately via GitHub Security Advisories.

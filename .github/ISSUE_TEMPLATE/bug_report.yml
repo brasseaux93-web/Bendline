@@ -1,0 +1,53 @@
+name: Bug Report
+description: Report a UI, offline sync, calculator, drawing lab, or billing issue
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for helping keep Bendline reliable. Please include exact steps so we can reproduce the issue.
+
+  - type: input
+    id: route
+    attributes:
+      label: Affected Route or Module
+      description: Which URL path or feature triggered the issue?
+      placeholder: "/practice, /draw, /mock, /account, etc."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: jurisdiction
+    attributes:
+      label: Target Jurisdiction
+      options:
+        - TX — IPC 2021 (Closed Book)
+        - CA — UPC 2024 (Closed Book)
+        - CO — IPC 2021 (Open Book)
+        - N/A or Public Page
+    validations:
+      required: true
+
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Theme & Connectivity
+      options:
+        - Dark · Online
+        - Dark · Offline / Airplane Mode
+        - Light · Online
+        - Light · Offline / Airplane Mode
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide concise steps, observed behavior, and expected behavior.
+      placeholder: |
+        1. Navigate to ...
+        2. Click ...
+        3. Observed vs expected ...
+    validations:
+      required: true

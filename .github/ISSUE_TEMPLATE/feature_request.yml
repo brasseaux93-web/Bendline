@@ -1,0 +1,28 @@
+name: Feature or Jurisdiction Request
+description: Propose an improvement or request support for an additional licensing jurisdiction
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the workflow improvement or licensing jurisdiction needed.
+    validations:
+      required: true
+
+  - type: input
+    id: code_basis
+    attributes:
+      label: Adopted Code Family, Edition & Vendor (if requesting a state)
+      placeholder: "e.g., WA — UPC 2021 (Prometric)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Product & Verification Notes
+      description: Explain how this fits offline capability, deterministic grading, or open/closed book rules.
+    validations:
+      required: false

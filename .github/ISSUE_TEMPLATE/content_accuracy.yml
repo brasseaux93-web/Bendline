@@ -1,0 +1,41 @@
+name: Code & Calculation Accuracy Report
+description: Flag a question, code-table calculation, citation pointer, or isometric drawing rule for licensed review
+title: "[Accuracy]: "
+labels: ["accuracy", "review-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: "**Notice**: Not affiliated with any code body, exam vendor, or state board. Do not paste copyrighted code-book text into this form; summarize the issue cleanly."
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Content Area
+      options:
+        - Practice / Mock Question
+        - Deterministic Calculator (DFU / WSFU / Drain / Vent / Gas)
+        - Isometric Pipe-Drawing Rule (/draw)
+        - Open-Book Navigation Outline (/navigate)
+        - AI Mistake Explanation (/api/ai/explain)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: edition
+    attributes:
+      label: Code Family & Edition
+      options:
+        - IPC 2021 (Texas)
+        - UPC 2024 / CPC (California)
+        - IPC 2021 (Colorado)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Discrepancy Details
+      description: Reference the item ID, calculator inputs, or paraphrased code section topic and what appears incorrect.
+    validations:
+      required: true
