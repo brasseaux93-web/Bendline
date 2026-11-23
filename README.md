@@ -49,7 +49,7 @@ flowchart LR
   subgraph Client["Client PWA (Next.js 15 + React 19)"]
     UI["App Router UI (Dark / Light Themes · Motion Reduced-Support)"]
     SW["Serwist Service Worker (public/sw.js · App Shell & Nav Cache)"]
-    DX["Dexie v7 IndexedDB (questionPacks · cachedSession · outbox)"]
+    DX["Dexie (package v4 · schema v7) IndexedDB (questionPacks · cachedSession · outbox)"]
     UI <--> SW
     UI <--> DX
   end
@@ -84,10 +84,24 @@ flowchart LR
 | **Framework & Language** | Next.js 15 (App Router), React 19, TypeScript (`strict: true`) |
 | **Styling & Motion** | Tailwind CSS, custom RGB design tokens (`dark` default + `light`), `motion/react`, `lucide-react` (`1.75px` stroke), Radix UI Dialog & Switch |
 | **Backend & Database** | Supabase (`@supabase/ssr`, `@supabase/supabase-js`), PostgreSQL migrations with RLS (`supabase/migrations/20261120000001` through `000012`) |
-| **Offline & Sync** | Serwist (`serwist`, `@serwist/next`), Dexie (`dexie` v4) transactional IndexedDB outbox |
+| **Offline & Sync** | Serwist (`serwist`, `@serwist/next`), Dexie (`dexie` v4 package, schema version 7) transactional IndexedDB outbox |
 | **Payments** | Stripe (`stripe`) Checkout Sessions, Billing Portal, HMAC webhook signature verification |
 | **Validation & Forms** | Zod (`zod`), React Hook Form (`react-hook-form`), `@hookform/resolvers` |
 | **Testing & Auditing** | Vitest (`vitest`, `fake-indexeddb`), Playwright (`@playwright/test`), `@axe-core/playwright`, Lighthouse (`lighthouse`) |
+
+---
+
+## Design System
+
+Bendline uses a deliberate token-driven design system optimized for mobile exam prep and the signature isometric drawing lab.
+
+- **Tokens & rules**: See [`docs/DESIGN.md`](docs/DESIGN.md) for color, type, motion, elevation, and iconography contracts.
+- **Default theme**: Dark (work-site friendly). Light theme is fully supported and audited.
+- **Typography**: Inter (UI) + JetBrains Mono (code refs, timers, calculator outputs) with forced `tabular-nums`.
+- **Motion**: Transform/opacity only, ≤ 300 ms interactive, reduced-motion respected via `MotionConfig` + in-app toggle.
+- **Signature motif**: 30° / 150° / vertical isometric geometry — used in the drawing lab and intended for empty states, loaders, and readiness visualization.
+
+> **Visuals**: Hero screenshots and short GIFs of the drawing lab + readiness bento will be added once a public preview deploy is live. Until then, run `npm run dev` or a production build to inspect the UI.
 
 ---
 
@@ -154,6 +168,9 @@ All test, evaluation, accessibility, and build commands available in [`package.j
 │   ├── workflows/ci.yml       # Vitest + Evals + Typecheck + Build + Playwright E2E CI
 │   ├── dependabot.yml         # Weekly npm and GitHub Actions dependency updates
 │   └── PULL_REQUEST_TEMPLATE.md
+├── docs/
+│   ├── DESIGN.md              # Design system contract (tokens, type, motion, icons)
+│   └── contextfile.md         # Product & engineering working rules
 ├── e2e/                       # Playwright E2E, offline replay, and axe-core WCAG AA specs
 ├── evals/                     # 100-case JSON eval harness for grounded AI explanations
 ├── public/icons/              # SVG app & PWA brand icons (SW outputs are gitignored)
