@@ -50,6 +50,8 @@ const FAQ: { q: string; a: ReactNode }[] = [
   },
 ];
 
+const TOOLBAR =
+  "inline-flex items-center gap-0.5 rounded-2xl border border-line-subtle bg-elevated/50 p-0.5 [&_button]:border-transparent [&_button]:bg-transparent [&_button:hover]:bg-elevated";
 const FOOTER_LINK = "inline-flex min-h-12 items-center text-ink-secondary transition-colors hover:text-ink-primary";
 
 export function BlueprintLanding() {
@@ -70,10 +72,10 @@ export function BlueprintLanding() {
 
   return (
     <div className="min-h-dvh bg-canvas text-ink-primary">
-      <header className="sticky top-0 z-30 border-b border-line-subtle bg-glass/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
+      <header className="sticky top-0 z-30 border-b border-line-subtle bg-glass/90 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
           <div className="flex items-center gap-3">
-            <BrandMark size={36} />
+            <BrandMark size={34} />
             <Wordmark />
             <span className="eyebrow hidden rounded-full border border-line-subtle px-2.5 py-1 !text-ink-secondary md:inline">
               TX · CA · CO
@@ -81,21 +83,23 @@ export function BlueprintLanding() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link href="/accuracy" className="inline-flex min-h-12 items-center gap-1.5 rounded-xl border border-line-subtle bg-surface/80 px-3.5 text-caption font-semibold text-ink-primary transition-colors hover:border-accent-cyan">
+            <Link href="/accuracy" className="hidden min-h-12 items-center gap-2 rounded-xl px-3 text-sm font-medium text-ink-secondary transition-colors hover:text-ink-primary sm:inline-flex">
               <ShieldCheck className="h-4 w-4 text-accent-emerald" strokeWidth={1.75} aria-hidden="true" />
-              Accuracy
+              Accuracy ledger
             </Link>
-            <ThemeToggleButton />
-            <button
-              type="button"
-              onClick={toggleReduceMotion}
-              aria-label="Toggle reduced motion"
-              aria-pressed={reduceMotion}
-              className="inline-flex min-h-12 min-w-12 items-center justify-center gap-1.5 rounded-xl border border-line-strong bg-elevated/80 px-3 text-caption text-ink-secondary transition-colors hover:text-ink-primary"
-            >
-              <Sparkles className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
-              <span className="hidden lg:inline">{reduceMotion ? "Motion: Reduced" : "Motion: Auto"}</span>
-            </button>
+            <div className={TOOLBAR}>
+              <ThemeToggleButton />
+              <button
+                type="button"
+                onClick={toggleReduceMotion}
+                aria-label="Toggle reduced motion"
+                aria-pressed={reduceMotion}
+                className="inline-flex min-h-12 min-w-12 items-center justify-center gap-1.5 rounded-xl border px-3 text-caption font-medium text-ink-secondary transition-colors hover:text-ink-primary"
+              >
+                <Sparkles className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+                <span className="hidden lg:inline">{reduceMotion ? "Motion: Reduced" : "Motion: Auto"}</span>
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -118,14 +122,14 @@ export function BlueprintLanding() {
                 Edition-aware questions reviewed by licensed plumbers, deterministic pipe-sizing drills, an isometric drawing lab with explainable scoring, and plain-language mistake diagnosis — built to work offline.
               </p>
 
-              <div className="flex flex-wrap items-center gap-5">
-                <button type="button" onClick={scrollToAuth} className="btn-primary">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <button type="button" onClick={scrollToAuth} className="btn-primary w-full sm:w-auto">
                   Start Free Diagnostic
                   <ArrowDown className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
                 </button>
-                <Link href="/accuracy" className="inline-flex min-h-12 items-center gap-2 text-sm text-ink-secondary transition-colors hover:text-ink-primary">
+                <Link href="/accuracy" className="btn-secondary w-full sm:w-auto">
                   <ShieldCheck className="h-4 w-4 text-accent-emerald" strokeWidth={1.75} aria-hidden="true" />
-                  Public licensed-review ledger &rarr;
+                  Public licensed-review ledger
                 </Link>
               </div>
 
@@ -139,7 +143,7 @@ export function BlueprintLanding() {
                     <p className="mt-1.5 text-sm font-semibold tabular-nums text-ink-primary">
                       {jur.question_count} Qs · {jur.time_limit_min}m · {jur.pass_pct}%
                     </p>
-                    <p className="text-caption text-ink-muted">{jur.open_book ? "Open book" : "Closed book"} · {jur.exam_vendor}</p>
+                    <p className="text-caption text-ink-secondary">{jur.open_book ? "Open book" : "Closed book"} · {jur.exam_vendor}</p>
                   </div>
                 ))}
               </div>
@@ -156,15 +160,15 @@ export function BlueprintLanding() {
                 </div>
                 <div className="mt-3 grid grid-cols-3 gap-2 border-t border-line-subtle pt-3 text-caption">
                   <div>
-                    <span className="block text-ink-muted">Readiness gate</span>
+                    <span className="block text-ink-secondary">Readiness gate</span>
                     <span className="font-mono font-semibold tabular-nums text-ink-primary">15 / topic</span>
                   </div>
                   <div>
-                    <span className="block text-ink-muted">Topics</span>
+                    <span className="block text-ink-secondary">Topics</span>
                     <span className="font-mono font-semibold tabular-nums text-ink-primary">10 domains</span>
                   </div>
                   <div>
-                    <span className="block text-ink-muted">Offline</span>
+                    <span className="block text-ink-secondary">Offline</span>
                     <span className="font-mono font-semibold text-accent-emerald">Dexie + SW</span>
                   </div>
                 </div>
@@ -188,7 +192,7 @@ export function BlueprintLanding() {
                   <div className={`icon-tile ${tone}`}>
                     <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
                   </div>
-                  <span className="font-mono text-caption text-ink-muted">{n}</span>
+                  <span className="font-mono text-caption text-ink-secondary">{n}</span>
                 </div>
                 <h3 className="text-h3 text-ink-primary">{title}</h3>
                 <p className="text-sm leading-relaxed text-ink-secondary">{body}</p>

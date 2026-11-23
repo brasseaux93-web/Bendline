@@ -50,7 +50,7 @@ const config: Config = {
         h2: ["1.25rem", { lineHeight: "1.28", letterSpacing: "-0.015em", fontWeight: "600" }],
         h3: ["1.0625rem", { lineHeight: "1.35", letterSpacing: "-0.01em", fontWeight: "600" }],
         body: ["1rem", { lineHeight: "1.55" }],
-        caption: ["0.75rem", { lineHeight: "1.35", fontWeight: "500" }],
+        caption: ["0.8125rem", { lineHeight: "1.4", letterSpacing: "0.005em", fontWeight: "500" }],
       },
       borderRadius: { card: "16px", pill: "9999px" },
       boxShadow: {
