@@ -22,14 +22,15 @@ import {
 import { selectAdaptiveQuestions } from "@/lib/srs";
 
 describe("readiness recomputation from attempts (client + server API parity)", () => {
-  it("stays null until every topic has >= 15 attempts and matches server endpoint output once unlocked", async () => {
-    const partialAttempts: AttemptRecord[] = SEED_TOPICS.slice(0, 9).flatMap(
+  it("stays null until every topic has >= 15 verified correct answers and matches server endpoint output once unlocked", async () => {
+    const partialAttempts: AttemptRecord[] = SEED_TOPICS.flatMap(
       (topic, tIdx) =>
         Array.from({ length: 15 }, (_, idx) => ({
           id: `p-${tIdx}-${idx}`,
           question_id: SEED_DRILL_QUESTIONS[0].id,
           topic_id: topic.id,
-          is_correct: true,
+          // 12/15 correct = below 15 verified correct threshold -> remains locked
+          is_correct: idx < 12,
           time_ms: 4000,
           mode: "practice" as const,
           attempted_at: "2026-11-20T12:00:00Z",
@@ -42,15 +43,15 @@ describe("readiness recomputation from attempts (client + server API parity)", (
     );
     expect(lockedLocal.scorePct).toBeNull();
     expect(lockedLocal.isUnlocked).toBe(false);
-    expect(lockedLocal.qualifiedTopicsCount).toBe(9);
+    expect(lockedLocal.qualifiedTopicsCount).toBe(0);
 
     const fullAttempts: AttemptRecord[] = SEED_TOPICS.flatMap((topic, tIdx) =>
-      Array.from({ length: 15 }, (_, idx) => ({
+      Array.from({ length: 18 }, (_, idx) => ({
         id: `f-${tIdx}-${idx}`,
         question_id: SEED_DRILL_QUESTIONS[0].id,
         topic_id: topic.id,
-        // 12/15 = 80% per topic
-        is_correct: idx < 12,
+        // 15 verified correct + 3 wrong = 83% per topic
+        is_correct: idx < 15,
         time_ms: 4500,
         mode: "practice" as const,
         attempted_at: "2026-11-20T12:00:00Z",
@@ -62,7 +63,7 @@ describe("readiness recomputation from attempts (client + server API parity)", (
       fullAttempts
     );
     expect(unlockedLocal.isUnlocked).toBe(true);
-    expect(unlockedLocal.scorePct).toBe(80);
+    expect(unlockedLocal.scorePct).toBe(83);
     expect(unlockedLocal.qualifiedTopicsCount).toBe(10);
 
     // Order-invariant check via POST /api/progress/readiness
@@ -78,9 +79,9 @@ describe("readiness recomputation from attempts (client + server API parity)", (
     const json = (await res.json()) as {
       readiness: { scorePct: number | null; qualifiedTopicsCount: number; totalAnswers: number };
     };
-    expect(json.readiness.scorePct).toBe(80);
+    expect(json.readiness.scorePct).toBe(83);
     expect(json.readiness.qualifiedTopicsCount).toBe(10);
-    expect(json.readiness.totalAnswers).toBe(150);
+    expect(json.readiness.totalAnswers).toBe(180);
   });
 });
 
@@ -307,10 +308,16 @@ describe("public /accuracy metrics & question review stamps", () => {
       confirmedErrorCount: 0,
       totalAttemptsCount: 0,
       jurisdictions: SEED_JURISDICTIONS,
+      includeReviewRevisions: true,
       nowIso: "2026-11-20T00:00:00Z",
     });
     expect(zeroAttemptSnap.publishedQuestionsCount).toBe(30);
     expect(zeroAttemptSnap.pctReviewedByLicensed).toBe(100);
     expect(zeroAttemptSnap.confirmedErrorRatePer1000).toBe(0);
+    expect(zeroAttemptSnap.items.length).toBeGreaterThanOrEqual(31);
+    expect(zeroAttemptSnap.items[0].criteria).toHaveLength(8);
+    expect(zeroAttemptSnap.items[0].versionHistory.length).toBeGreaterThanOrEqual(1);
+    expect(zeroAttemptSnap.errata.length).toBeGreaterThanOrEqual(2);
+    expect(zeroAttemptSnap.errata.some((e) => e.status === "resolved")).toBe(true);
   });
 });

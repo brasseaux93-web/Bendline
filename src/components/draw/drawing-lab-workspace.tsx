@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { FixtureGlyphIcon } from "@/components/icons/plumbing-icons";
 import { useAppState } from "@/components/providers/app-state-provider";
+import { generateUuid } from "@/lib/utils";
 import {
   type DrawEdge,
   type DrawGraph,
@@ -327,7 +328,7 @@ export function DrawingLabWorkspace() {
       setGradeOutput(output);
 
       const submission = {
-        id: crypto.randomUUID(),
+        id: generateUuid(),
         exercise_id: activeExercise.id,
         score: output.max > 0 ? Math.round((output.score / output.max) * 100) : 0,
         mode,

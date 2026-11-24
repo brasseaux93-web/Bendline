@@ -45,10 +45,22 @@ function makeAttempts(
 }
 
 describe("Bendline deterministic metrics", () => {
-  it("keeps readiness null until every topic reaches 15 answers", () => {
+  it("keeps readiness null until every topic reaches 15 verified correct answers", () => {
     expect(computeReadiness(SEED_TOPICS, []).scorePct).toBeNull();
 
-    // 9 topics with 15 answers, 10th topic with 14 answers -> still null
+    // 15 attempts with only 12 correct stays locked
+    const fifteenAttemptTwelveCorrect: AttemptRecord[] = SEED_TOPICS.flatMap(
+      (topic) => makeAttempts(topic.id, 12, 3)
+    );
+    const lockedWithFifteenAttempts = computeReadiness(
+      SEED_TOPICS,
+      fifteenAttemptTwelveCorrect
+    );
+    expect(lockedWithFifteenAttempts.scorePct).toBeNull();
+    expect(lockedWithFifteenAttempts.isUnlocked).toBe(false);
+    expect(lockedWithFifteenAttempts.qualifiedTopicsCount).toBe(0);
+
+    // 9 topics with 15 correct, 10th topic with 14 correct -> still null
     const almostReady: AttemptRecord[] = [];
     SEED_TOPICS.forEach((topic, index) => {
       const count = index === 9 ? 14 : READINESS_MIN_ANSWERS_PER_TOPIC;
@@ -61,7 +73,7 @@ describe("Bendline deterministic metrics", () => {
     expect(partial.qualifiedTopicsCount).toBe(9);
     expect(partial.totalTopics).toBe(10);
 
-    // Add 15th answer on final topic -> unlocks exact readiness score
+    // Add 15th verified correct answer on final topic -> unlocks exact readiness score
     const unlockedAttempts = [
       ...almostReady,
       ...makeAttempts(SEED_TOPICS[9].id, 1, 0),

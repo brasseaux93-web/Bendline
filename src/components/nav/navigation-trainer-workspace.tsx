@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
+import { generateUuid } from "@/lib/utils";
 import {
   AlertTriangle,
   BookmarkCheck,
@@ -438,7 +439,7 @@ export function NavigationTrainerWorkspace() {
     }
 
     const newNode: OutlineNodeRecord = {
-      id: crypto.randomUUID(),
+      id: generateUuid(),
       jurisdiction_id: activeJurisdiction.id,
       display_order: scopedNodes.length + 1200,
       ...parsed.data,

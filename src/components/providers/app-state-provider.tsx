@@ -60,6 +60,11 @@ import {
   writeAttemptAndEnqueueOutbox,
   type ReplayOutboxResult,
 } from "@/lib/offline/outbox";
+import {
+  convertDiagnosticToMigrationRecords,
+  loadAnonymousDiagnostic,
+  markAnonymousDiagnosticMigrated,
+} from "@/lib/diagnostic";
 import { inferAttemptErrorType } from "@/lib/progress/analytics";
 import {
   checkFreeTierAllowance,
@@ -71,6 +76,7 @@ import {
   createBrowserSupabaseClient,
   isSupabaseConfigured,
 } from "@/lib/supabase/client";
+import { generateUuid } from "@/lib/utils";
 
 export type AuthMode = "logged_out" | "authenticated";
 
@@ -111,6 +117,8 @@ interface AppStateContextValue {
   reduceMotion: boolean;
   freeTierRemaining: number;
   freeTierUsedToday: number;
+  migratedDiagnosticCount: number;
+  dismissMigratedDiagnosticNotice: () => void;
   flushOutbox: () => Promise<ReplayOutboxResult | null>;
   syncQuestionPack: (jurisdiction?: Jurisdiction) => Promise<void>;
   refreshEntitlement: () => Promise<ServerEntitlement | null>;
@@ -245,6 +253,18 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const [practiceSessions, setPracticeSessions] = useState<
     PracticeSessionRecord[]
   >([]);
+  const [migratedDiagnosticCount, setMigratedDiagnosticCount] = useState(0);
+  const attemptsRef = useRef<AttemptRecord[]>([]);
+  const srsStatesRef = useRef<SrsStateRecord[]>([]);
+  const migratingDiagnosticRef = useRef(false);
+
+  useEffect(() => {
+    attemptsRef.current = attempts;
+  }, [attempts]);
+
+  useEffect(() => {
+    srsStatesRef.current = srsStates;
+  }, [srsStates]);
 
   const supabaseReady = isSupabaseConfigured();
 
@@ -253,6 +273,44 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       profile.reduce_motion
     );
   }, [profile.reduce_motion]);
+
+  useEffect(() => {
+    if (
+      process.env.NODE_ENV !== "development" ||
+      typeof window === "undefined"
+    ) {
+      return;
+    }
+
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .getRegistrations()
+        .then((registrations) =>
+          Promise.all(registrations.map((reg) => reg.unregister()))
+        )
+        .catch(() => undefined);
+    }
+
+    if ("caches" in window) {
+      caches
+        .keys()
+        .then((keys) =>
+          Promise.all(
+            keys
+              .filter(
+                (k) =>
+                  k.includes("serwist") ||
+                  k.includes("bendline-pages") ||
+                  k === "pages" ||
+                  k === "others" ||
+                  k.startsWith("pages-rsc")
+              )
+              .map((k) => caches.delete(k))
+          )
+        )
+        .catch(() => undefined);
+    }
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -268,18 +326,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
 
       if (db) {
         try {
-          const [
-            cachedSession,
-            cachedProfiles,
-            cachedAttempts,
-            cachedSrs,
-            cachedMocks,
-            cachedPractice,
-            cachedOutlineNodes,
-            cachedNavAttempts,
-            cachedDrawingSubs,
-            outboxPendingCount,
-          ] = await Promise.all([
+          const dexieLoad = Promise.all([
             loadCachedSession(db),
             db.profiles.toArray(),
             db.attempts.toArray(),
@@ -291,8 +338,24 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
             db.drawingSubmissions.toArray(),
             getPendingOutboxCount(db),
           ]);
+          const timeoutFallback = new Promise<null>((resolve) =>
+            setTimeout(() => resolve(null), 2500)
+          );
+          const loaded = await Promise.race([dexieLoad, timeoutFallback]);
 
-          if (active) {
+          if (loaded && active) {
+            const [
+              cachedSession,
+              cachedProfiles,
+              cachedAttempts,
+              cachedSrs,
+              cachedMocks,
+              cachedPractice,
+              cachedOutlineNodes,
+              cachedNavAttempts,
+              cachedDrawingSubs,
+              outboxPendingCount,
+            ] = loaded;
             if (cachedSession && cachedSession.authMode === "authenticated") {
               setAuthMode("authenticated");
               setUserEmail(cachedSession.userEmail);
@@ -339,7 +402,12 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
               );
             }
 
-            const cachedPack = await loadQuestionPack(db, hydratedJurisdictionId);
+            const cachedPack = await Promise.race([
+              loadQuestionPack(db, hydratedJurisdictionId),
+              new Promise<undefined>((resolve) =>
+                setTimeout(() => resolve(undefined), 1500)
+              ),
+            ]);
             if (active && cachedPack && cachedPack.questions.length > 0) {
               setQuestionPackSyncedAt(cachedPack.synced_at);
               setQuestions((prev) => {
@@ -594,6 +662,10 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
+  const dismissMigratedDiagnosticNotice = useCallback(() => {
+    setMigratedDiagnosticCount(0);
+  }, []);
+
   const persistProfile = useCallback(async (next: Profile) => {
     setProfile(next);
     const db = getOfflineDb();
@@ -726,7 +798,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     async ({ email, state }: { email: string; state: string }) => {
       const normalizedState = state.trim().toUpperCase();
       const entry = {
-        id: crypto.randomUUID(),
+        id: generateUuid(),
         email: email.trim().toLowerCase(),
         state: normalizedState,
         license_level: "journeyman" as const,
@@ -1047,6 +1119,118 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
     syncQuestionPack,
   ]);
 
+  // Migrate unauthenticated /diagnostic answers cleanly on first authenticated hydration
+  useEffect(() => {
+    if (!isHydrated || authMode !== "authenticated" || migratingDiagnosticRef.current) {
+      return;
+    }
+    const anon = loadAnonymousDiagnostic();
+    if (!anon || anon.answers.length === 0 || anon.migrated_at) {
+      return;
+    }
+
+    migratingDiagnosticRef.current = true;
+    markAnonymousDiagnosticMigrated();
+
+    void (async () => {
+      try {
+        const timeZone = getBrowserTimeZone();
+        const { attempts: migratedAttempts, srsStates: migratedSrs } =
+          convertDiagnosticToMigrationRecords(anon, timeZone);
+
+        const existingIds = new Set(attemptsRef.current.map((a) => a.id));
+        const newAttempts = migratedAttempts.filter((a) => !existingIds.has(a.id));
+
+        if (newAttempts.length > 0) {
+          const db = getOfflineDb();
+          const srsByQuestion = new Map(
+            migratedSrs.map((s) => [s.question_id, s])
+          );
+
+          const selectedIndexById = new Map(
+            anon.answers.map((a) => [a.id, a.selected_index])
+          );
+
+          if (db) {
+            for (const att of newAttempts) {
+              const srsForQ =
+                srsByQuestion.get(att.question_id) ??
+                srsStatesRef.current.find((s) => s.question_id === att.question_id) ??
+                {
+                  id: att.id,
+                  question_id: att.question_id,
+                  due_at: att.attempted_at,
+                  interval_days: 1,
+                  repetitions: att.is_correct ? 1 : 0,
+                  ease_factor: 2.5,
+                  lapses: att.is_correct ? 0 : 1,
+                  last_reviewed_at: att.attempted_at,
+                };
+
+              await writeAttemptAndEnqueueOutbox(db, {
+                attempt: att,
+                srsState: srsForQ,
+                requestPayload: {
+                  questionId: att.question_id,
+                  selectedIndex: selectedIndexById.get(att.id) ?? 0,
+                  isCorrect: att.is_correct,
+                  timeMs: att.time_ms,
+                  mode: att.mode,
+                  errorType: att.error_type ?? null,
+                  clientAttemptId: att.id,
+                  timeZone,
+                },
+                idempotencyKey: att.id,
+              });
+            }
+          }
+
+          setAttempts((prev) => {
+            const seen = new Set(prev.map((p) => p.id));
+            return [...newAttempts.filter((a) => !seen.has(a.id)), ...prev];
+          });
+
+          setSrsStates((prev) => {
+            const map = new Map(prev.map((s) => [s.question_id, s]));
+            for (const s of migratedSrs) {
+              if (!map.has(s.question_id)) {
+                map.set(s.question_id, s);
+              }
+            }
+            return [...map.values()];
+          });
+
+          setMigratedDiagnosticCount(newAttempts.length);
+        }
+
+        if (
+          !profile.onboarding_completed_at &&
+          jurisdictions.some((j) => j.id === anon.jurisdiction_id) &&
+          profile.target_jurisdiction_id !== anon.jurisdiction_id
+        ) {
+          await persistProfile({
+            ...profile,
+            target_jurisdiction_id: anon.jurisdiction_id,
+          });
+        }
+
+        if (isOnline) {
+          await flushOutbox();
+        }
+      } finally {
+        migratingDiagnosticRef.current = false;
+      }
+    })();
+  }, [
+    authMode,
+    flushOutbox,
+    isHydrated,
+    isOnline,
+    jurisdictions,
+    persistProfile,
+    profile,
+  ]);
+
   const recordAttempt = useCallback(
     async ({
       questionId,
@@ -1083,7 +1267,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         };
       }
 
-      const clientAttemptId = crypto.randomUUID();
+      const clientAttemptId = generateUuid();
       const matchedQ = questions.find((q) => q.id === questionId);
       const resolvedErrorType: AiErrorType | null = isCorrect
         ? null
@@ -1111,7 +1295,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       });
 
       const nextSrs: SrsStateRecord = {
-        id: existingSrs?.id ?? crypto.randomUUID(),
+        id: existingSrs?.id ?? generateUuid(),
         question_id: questionId,
         due_at: sm2.due_at,
         interval_days: sm2.interval_days,
@@ -1318,7 +1502,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       }
 
       const newSession: PracticeSessionRecord = {
-        id: crypto.randomUUID(),
+        id: generateUuid(),
         jurisdiction_id: activeJurisdiction.id,
         mode,
         topic_id: topicId ?? null,
@@ -1438,7 +1622,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       description: string;
     }) => {
       const report: ErrorReportRecord = {
-        id: crypto.randomUUID(),
+        id: generateUuid(),
         question_id: questionId,
         category,
         description: description.trim(),
@@ -1762,6 +1946,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       reduceMotion: profile.reduce_motion,
       freeTierRemaining: allowance.remaining,
       freeTierUsedToday: allowance.usedToday,
+      migratedDiagnosticCount,
+      dismissMigratedDiagnosticNotice,
       flushOutbox,
       syncQuestionPack,
       refreshEntitlement,
@@ -1816,6 +2002,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       practiceSessions,
       allowance.remaining,
       allowance.usedToday,
+      migratedDiagnosticCount,
+      dismissMigratedDiagnosticNotice,
       flushOutbox,
       syncQuestionPack,
       refreshEntitlement,

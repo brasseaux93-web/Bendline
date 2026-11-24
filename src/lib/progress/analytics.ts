@@ -130,6 +130,7 @@ export interface TopicMasteryVsBlueprintItem {
   blueprintWeightPct: number;
   masteryPct: number;
   answered: number;
+  correct: number;
   accuracyPct: number | null;
   priorityGap: number;
 }
@@ -179,6 +180,7 @@ export function computeTopicMasteryVsBlueprint(
         blueprintWeightPct,
         masteryPct,
         answered: counts.answered,
+        correct: counts.correct,
         accuracyPct,
         priorityGap,
       };

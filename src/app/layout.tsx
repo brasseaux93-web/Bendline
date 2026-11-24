@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { MotionConfig } from "motion/react";
+import { GlobalModalProvider } from "@/components/modals/global-modal-provider";
 import { AppStateProvider } from "@/components/providers/app-state-provider";
+import { RoutePrefetcher } from "@/components/shell/route-prefetcher";
 import "./globals.css";
 
 const inter = Inter({
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "rgb(10, 14, 20)",
+  themeColor: "rgb(5, 5, 5)",
 };
 
 export default function RootLayout({
@@ -35,7 +37,12 @@ export default function RootLayout({
     <html lang="en" data-theme="dark" className={`${inter.variable} dark`}>
       <body className="bg-bg font-sans text-ink tabular-nums antialiased">
         <MotionConfig reducedMotion="user">
-          <AppStateProvider>{children}</AppStateProvider>
+          <AppStateProvider>
+            <GlobalModalProvider>
+              <RoutePrefetcher />
+              {children}
+            </GlobalModalProvider>
+          </AppStateProvider>
         </MotionConfig>
       </body>
     </html>

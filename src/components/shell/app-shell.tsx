@@ -12,6 +12,7 @@ import {
   User,
   WifiOff,
 } from "lucide-react";
+import { useGlobalModal } from "@/components/modals/global-modal-provider";
 import { useAppState } from "@/components/providers/app-state-provider";
 import { AFFILIATION_DISCLAIMER } from "@/lib/legal/constants";
 import { BottomNav } from "./bottom-nav";
@@ -26,6 +27,7 @@ export function AppShell({ children }: { children: ReactNode }) {
     toggleReduceMotion,
     signOut,
   } = useAppState();
+  const { openModal } = useGlobalModal();
 
   return (
     <div className="min-h-dvh bg-canvas text-ink-primary">
@@ -76,8 +78,9 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <Link
-              href="/account"
+            <button
+              type="button"
+              onClick={() => openModal("account")}
               data-testid="sync-status-badge"
               aria-label={`Sync status: ${
                 !isOnline
@@ -122,16 +125,17 @@ export function AppShell({ children }: { children: ReactNode }) {
                     ? `Syncing · ${pendingOutboxCount}`
                     : "Synced"}
               </span>
-            </Link>
+            </button>
 
-            <Link
-              href="/account"
+            <button
+              type="button"
+              onClick={() => openModal("account")}
               aria-label="Account and billing"
               className="inline-flex min-h-12 min-w-12 items-center justify-center gap-1.5 rounded-xl border border-line-strong bg-elevated/70 px-3 text-caption font-medium text-ink-secondary transition-colors hover:border-accent-cyan/70 hover:text-ink-primary"
             >
               <User className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
               <span className="hidden sm:inline">Account</span>
-            </Link>
+            </button>
 
             <ThemeToggleButton />
 
@@ -173,18 +177,34 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <span>{AFFILIATION_DISCLAIMER}</span>
           <nav aria-label="Legal and trust links" className="flex flex-wrap items-center gap-4">
-            <Link href="/accuracy" className="inline-flex min-h-12 items-center text-accent-cyan hover:underline">
+            <button
+              type="button"
+              onClick={() => openModal("accuracy")}
+              className="inline-flex min-h-12 items-center text-ink-secondary transition-colors hover:text-ink-primary"
+            >
               Accuracy Ledger
-            </Link>
-            <Link href="/account" className="inline-flex min-h-12 items-center text-accent-cyan hover:underline">
+            </button>
+            <button
+              type="button"
+              onClick={() => openModal("account")}
+              className="inline-flex min-h-12 items-center text-ink-secondary transition-colors hover:text-ink-primary"
+            >
               Account &amp; Billing
-            </Link>
-            <Link href="/legal/terms" className="inline-flex min-h-12 items-center text-accent-cyan hover:underline">
+            </button>
+            <button
+              type="button"
+              onClick={() => openModal("terms")}
+              className="inline-flex min-h-12 items-center text-ink-secondary transition-colors hover:text-ink-primary"
+            >
               Terms
-            </Link>
-            <Link href="/legal/privacy" className="inline-flex min-h-12 items-center text-accent-cyan hover:underline">
+            </button>
+            <button
+              type="button"
+              onClick={() => openModal("privacy")}
+              className="inline-flex min-h-12 items-center text-ink-secondary transition-colors hover:text-ink-primary"
+            >
               Privacy
-            </Link>
+            </button>
           </nav>
         </div>
       </footer>

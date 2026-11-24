@@ -49,6 +49,8 @@ export function HomeBento() {
     srsStates,
     mockSessions,
     profile,
+    migratedDiagnosticCount,
+    dismissMigratedDiagnosticNotice,
     recordAttempt,
     completeSrsReview,
     updateExamDate,
@@ -192,6 +194,33 @@ export function HomeBento() {
 
   return (
     <div className="space-y-4">
+      {migratedDiagnosticCount > 0 && (
+        <div
+          role="status"
+          data-testid="diagnostic-migrated-banner"
+          className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-accent-emerald/40 bg-accent-emerald/10 px-4 py-3 text-sm text-ink-primary"
+        >
+          <span className="inline-flex items-center gap-2">
+            <CheckCircle2
+              className="h-4 w-4 shrink-0 text-accent-emerald"
+              strokeWidth={1.75}
+              aria-hidden="true"
+            />
+            <span>
+              Migrated <strong>{migratedDiagnosticCount}</strong> free diagnostic{" "}
+              {migratedDiagnosticCount === 1 ? "answer" : "answers"} into your review queue and readiness tracker.
+            </span>
+          </span>
+          <button
+            type="button"
+            onClick={dismissMigratedDiagnosticNotice}
+            aria-label="Dismiss migration notice"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-ink-secondary hover:bg-elevated hover:text-ink-primary"
+          >
+            <X className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+          </button>
+        </div>
+      )}
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="text-caption uppercase tracking-wider text-accent-cyan">
@@ -247,11 +276,11 @@ export function HomeBento() {
           <div className="space-y-2">
             {readiness.scorePct === null ? (
               <p className="text-sm text-ink-secondary">
-                Score stays <code className="font-mono text-ink-primary">null</code> until you answer{" "}
+                Score stays <code className="font-mono text-ink-primary">null</code> until you log{" "}
                 <strong className="tabular-nums text-ink-primary">
                   {READINESS_MIN_ANSWERS_PER_TOPIC}
                 </strong>{" "}
-                questions in all{" "}
+                verified correct answers in all{" "}
                 <strong className="tabular-nums text-ink-primary">
                   {readiness.totalTopics}
                 </strong>{" "}
@@ -642,14 +671,19 @@ export function HomeBento() {
       {/* Shared layoutId Topic Drill Dialog */}
       <AnimatePresence>
         {liveDrillTopic && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div
+            onClick={(e) => {
+              if (e.target === e.currentTarget) closeTopicDrill();
+            }}
+            className="fixed inset-0 z-50 flex cursor-pointer items-center justify-center p-4"
+          >
             <motion.div
               variants={MOTION_VARIANTS.overlayFade}
               initial="initial"
               animate="animate"
               exit="exit"
               onClick={closeTopicDrill}
-              className="fixed inset-0 bg-canvas/80 backdrop-blur-sm"
+              className="fixed inset-0 cursor-pointer bg-canvas/80 backdrop-blur-sm"
               aria-hidden="true"
             />
 
@@ -659,7 +693,7 @@ export function HomeBento() {
               aria-labelledby="topic-drill-dialog-title"
               layoutId={`topic-card-${liveDrillTopic.topic.slug}`}
               transition={MOTION_SPRING.gentle}
-              className="bento-card relative z-10 w-full max-w-xl space-y-4 border-accent-cyan/50 bg-surface p-5 sm:p-6"
+              className="bento-card relative z-10 w-full max-w-xl cursor-default space-y-4 border-accent-cyan/50 bg-surface p-5 sm:p-6"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-start gap-3">

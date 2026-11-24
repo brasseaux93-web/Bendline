@@ -9,7 +9,8 @@ import type {
   TopicPerformance,
 } from "./types";
 
-export const READINESS_MIN_ANSWERS_PER_TOPIC = 15;
+export const READINESS_MIN_CORRECT_PER_TOPIC = 15;
+export const READINESS_MIN_ANSWERS_PER_TOPIC = READINESS_MIN_CORRECT_PER_TOPIC;
 
 export function computeTopicPerformances(
   topics: Topic[],
@@ -40,7 +41,7 @@ export function computeTopicPerformances(
         accuracyPct,
         remainingForReadiness: Math.max(
           0,
-          READINESS_MIN_ANSWERS_PER_TOPIC - stat.answered
+          READINESS_MIN_CORRECT_PER_TOPIC - stat.correct
         ),
       };
     });
@@ -52,7 +53,7 @@ export function computeReadiness(
 ): ReadinessResult {
   const performances = computeTopicPerformances(topics, attempts);
   const qualifiedTopics = performances.filter(
-    (item) => item.answered >= READINESS_MIN_ANSWERS_PER_TOPIC
+    (item) => item.correct >= READINESS_MIN_CORRECT_PER_TOPIC
   );
   const totalAnswers = performances.reduce((sum, item) => sum + item.answered, 0);
 
@@ -65,7 +66,7 @@ export function computeReadiness(
       isUnlocked: false,
       qualifiedTopicsCount: qualifiedTopics.length,
       totalTopics: performances.length,
-      minAnswersPerTopic: READINESS_MIN_ANSWERS_PER_TOPIC,
+      minAnswersPerTopic: READINESS_MIN_CORRECT_PER_TOPIC,
       totalAnswers,
     };
   }
@@ -79,7 +80,7 @@ export function computeReadiness(
     isUnlocked: true,
     qualifiedTopicsCount: qualifiedTopics.length,
     totalTopics: performances.length,
-    minAnswersPerTopic: READINESS_MIN_ANSWERS_PER_TOPIC,
+    minAnswersPerTopic: READINESS_MIN_CORRECT_PER_TOPIC,
     totalAnswers,
   };
 }

@@ -39,8 +39,9 @@ export function BottomNav() {
             <Link
               key={href}
               href={href}
+              prefetch={true}
               aria-current={isActive ? "page" : undefined}
-              className={`relative flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-xl px-1 py-1.5 text-caption transition-colors duration-200 ${
+              className={`relative flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-xl px-1 py-1.5 text-caption transition-colors duration-150 ${
                 isActive
                   ? "font-semibold text-ink-primary"
                   : "text-ink-secondary hover:text-ink-primary"

@@ -78,6 +78,8 @@ export function OnboardingWizard() {
     jurisdictions,
     profile,
     userEmail,
+    migratedDiagnosticCount,
+    dismissMigratedDiagnosticNotice,
     completeOnboarding,
     submitStateWaitlist,
   } = useAppState();
@@ -148,6 +150,25 @@ export function OnboardingWizard() {
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-6 py-4 sm:py-8">
+      {migratedDiagnosticCount > 0 && (
+        <div
+          role="status"
+          data-testid="diagnostic-migrated-banner"
+          className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-accent-emerald/40 bg-accent-emerald/10 px-4 py-3 text-sm text-ink-primary"
+        >
+          <span>
+            Saved your <strong>{migratedDiagnosticCount}</strong> free diagnostic{" "}
+            {migratedDiagnosticCount === 1 ? "answer" : "answers"} into your account.
+          </span>
+          <button
+            type="button"
+            onClick={dismissMigratedDiagnosticNotice}
+            className="text-xs font-medium text-ink-secondary underline hover:text-ink-primary"
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
       <header className="space-y-3">
         <div className="flex items-center justify-between gap-3">
           <span className="text-caption uppercase tracking-wider text-accent-cyan">

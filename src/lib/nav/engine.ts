@@ -1,4 +1,5 @@
 import type { Jurisdiction } from "@/lib/domain/types";
+import { generateUuid } from "@/lib/utils";
 import type {
   ChapterLookupMetric,
   NavAttemptRecord,
@@ -227,7 +228,7 @@ export function evaluateNavAttempt(input: {
       : null;
 
   return {
-    id: input.id ?? crypto.randomUUID(),
+    id: input.id ?? generateUuid(),
     jurisdiction_id: input.jurisdictionId,
     outline_node_id: input.prompt.targetNode.id,
     chapter_node_id: input.prompt.chapterNode.id,

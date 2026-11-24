@@ -8,30 +8,30 @@ html.dark {
   color-scheme: dark;
 
   /* Core design tokens (space-separated RGB for Tailwind opacity support) */
-  --bg: 10 14 20;
-  --card: 17 24 35;
-  --ink: 244 247 251;
-  --muted: 163 178 201;
-  --border: 88 110 143;
-  --primary: 245 158 11;
-  --primary-hover: 251 191 36;
-  --primary-ink: 10 14 20;
-  --accent: 34 211 238;
+  --bg: 5 5 5;
+  --card: 13 13 13;
+  --ink: 248 250 252;
+  --muted: 148 163 184;
+  --border: 38 38 42;
+  --primary: 255 159 28;
+  --primary-hover: 255 179 71;
+  --primary-ink: 5 5 5;
+  --accent: 0 229 255;
   --success: 16 185 129;
   --error: 244 63 94;
 
   /* Surface & semantic aliases */
   --bg-canvas: var(--bg);
   --bg-surface: var(--card);
-  --bg-elevated: 25 35 50;
-  --bg-glass: 15 22 34;
+  --bg-elevated: 20 20 20;
+  --bg-glass: 9 9 9;
 
   --text-primary: var(--ink);
   --text-secondary: var(--muted);
   --text-muted: var(--muted);
 
-  --border-subtle: var(--border);
-  --border-strong: var(--border);
+  --border-subtle: 32 32 36;
+  --border-strong: 52 52 58;
 
   --accent-amber: var(--primary);
   --accent-cyan: var(--accent);
@@ -112,6 +112,27 @@ html[data-reduce-motion="true"] *::after {
     font-variant-numeric: tabular-nums;
   }
 
+  .page-enter {
+    animation: bendline-page-enter 140ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes bendline-page-enter {
+    from {
+      opacity: 0.01;
+      transform: translateY(5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page-enter {
+      animation: none;
+    }
+  }
+
   .blueprint-grid-bg {
     background-color: rgb(var(--bg));
     background-image:
@@ -124,6 +145,48 @@ html[data-reduce-motion="true"] *::after {
       20px 20px,
       100px 100px,
       100px 100px;
+  }
+
+  .blueprint-grid-masked {
+    background-image:
+      linear-gradient(to right, rgb(var(--accent) / 0.07) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--accent) / 0.07) 1px, transparent 1px),
+      linear-gradient(to right, rgb(var(--accent) / 0.14) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--accent) / 0.14) 1px, transparent 1px);
+    background-size:
+      24px 24px,
+      24px 24px,
+      120px 120px,
+      120px 120px;
+    -webkit-mask-image: radial-gradient(
+      ellipse 82% 52% at 50% 72%,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.45) 45%,
+      transparent 80%
+    );
+    mask-image: radial-gradient(
+      ellipse 82% 52% at 50% 72%,
+      rgba(0, 0, 0, 0.95) 0%,
+      rgba(0, 0, 0, 0.45) 45%,
+      transparent 80%
+    );
+  }
+
+  @media (min-width: 1024px) {
+    .blueprint-grid-masked {
+      -webkit-mask-image: radial-gradient(
+        ellipse 58% 68% at 74% 48%,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.45) 45%,
+        transparent 80%
+      );
+      mask-image: radial-gradient(
+        ellipse 58% 68% at 74% 48%,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.45) 45%,
+        transparent 80%
+      );
+    }
   }
 
   .iso-bg {
@@ -141,7 +204,7 @@ html[data-reduce-motion="true"] *::after {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50;
     background-color: rgb(var(--primary));
     color: rgb(var(--primary-ink));
   }
@@ -154,17 +217,31 @@ html[data-reduce-motion="true"] *::after {
     transform: scale(0.985);
   }
 
+  .btn-solid {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50;
+    background-color: rgb(var(--ink));
+    color: rgb(var(--bg));
+  }
+
+  .btn-solid:hover:not(:disabled) {
+    opacity: 0.9;
+  }
+
+  .btn-solid:active:not(:disabled) {
+    transform: scale(0.985);
+  }
+
   .btn-secondary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-border bg-elevated/90 px-4 py-3 text-base font-medium text-ink transition duration-200 hover:border-accent/70 hover:bg-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-ink/[0.12] bg-transparent px-4 py-3 text-base font-medium text-ink transition duration-150 hover:border-ink/25 hover:bg-elevated focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50;
   }
 
   .glass-surface {
-    @apply rounded-2xl border border-border/80 bg-glass/80 backdrop-blur-xl;
-    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.06), 0 16px 40px rgb(0 0 0 / 0.35);
+    @apply rounded-2xl border border-ink/[0.08] bg-glass/85 backdrop-blur-xl;
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.05), 0 18px 50px rgb(0 0 0 / 0.4);
   }
 
   .bento-card {
-    @apply rounded-2xl border border-border/90 bg-card/95 p-4 sm:p-5;
-    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.05);
+    @apply rounded-2xl border border-ink/[0.08] bg-card p-4 sm:p-5;
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 0.04);
   }
 }

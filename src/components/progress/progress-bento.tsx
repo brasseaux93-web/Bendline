@@ -19,6 +19,7 @@ import {
   Wrench,
 } from "lucide-react";
 import { TopicPlumbingIcon } from "@/components/icons/plumbing-icons";
+import { useGlobalModal } from "@/components/modals/global-modal-provider";
 import { useAppState } from "@/components/providers/app-state-provider";
 import { READINESS_MIN_ANSWERS_PER_TOPIC } from "@/lib/domain/metrics";
 import type { ReadinessResult } from "@/lib/domain/types";
@@ -50,6 +51,7 @@ export function ProgressBento() {
     drawingExercises,
     drawingSubmissions,
   } = useAppState();
+  const { openModal } = useGlobalModal();
 
   const localReadiness = recomputeReadinessFromAttempts(topics, attempts);
   const [serverReadiness, setServerReadiness] = useState<{
@@ -123,8 +125,9 @@ export function ProgressBento() {
           </h1>
         </div>
 
-        <Link
-          href="/accuracy"
+        <button
+          type="button"
+          onClick={() => openModal("accuracy")}
           className="btn-secondary min-h-12 px-3.5 text-sm"
         >
           <ShieldCheck
@@ -133,7 +136,7 @@ export function ProgressBento() {
             aria-hidden="true"
           />
           Public Accuracy Ledger
-        </Link>
+        </button>
       </div>
 
       {/* Main 12-Col Bento Grid */}
@@ -152,7 +155,7 @@ export function ProgressBento() {
           <div className="flex items-start justify-between gap-3">
             <div>
               <span className="text-caption uppercase tracking-wider text-ink-secondary">
-                15-Answer Topic Gate
+                15 Verified Correct / Topic Gate
               </span>
               <h2
                 id="progress-readiness-heading"
@@ -392,7 +395,7 @@ export function ProgressBento() {
             {topicVsBlueprint.map((item) => {
               const gatePct = Math.min(
                 100,
-                Math.round((item.answered / READINESS_MIN_ANSWERS_PER_TOPIC) * 100)
+                Math.round((item.correct / READINESS_MIN_ANSWERS_PER_TOPIC) * 100)
               );
               return (
                 <article
@@ -410,8 +413,8 @@ export function ProgressBento() {
                         </h3>
                         <p className="font-mono tabular-nums text-caption text-ink-secondary">
                           Mastery {item.masteryPct}% · Blueprint{" "}
-                          {item.blueprintWeightPct}% · {item.answered}/
-                          {READINESS_MIN_ANSWERS_PER_TOPIC} answered
+                          {item.blueprintWeightPct}% · {item.correct}/
+                          {READINESS_MIN_ANSWERS_PER_TOPIC} verified correct ({item.answered} answered)
                         </p>
                       </div>
                     </div>

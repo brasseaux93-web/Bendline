@@ -2,6 +2,7 @@ import type {
   AttemptRecord,
   SrsStateRecord,
 } from "@/lib/domain/types";
+import { generateUuid } from "@/lib/utils";
 import type {
   BendlineOfflineDB,
   CachedSessionRecord,
@@ -29,7 +30,7 @@ export async function writeAttemptAndEnqueueOutbox(
 ): Promise<OutboxItemRecord> {
   const idempotencyKey = input.idempotencyKey ?? input.attempt.id;
   const outboxItem: OutboxItemRecord = {
-    id: crypto.randomUUID(),
+    id: generateUuid(),
     idempotency_key: idempotencyKey,
     kind: "attempt",
     endpoint: "/api/practice/attempt",
@@ -78,7 +79,7 @@ export async function rollbackAttemptAndOutbox(
 export async function writeDrawingDraftAndEnqueueOutbox(
   db: BendlineOfflineDB,
   draft: Omit<DrawingDraftRecord, "client_draft_id">,
-  idempotencyKey: string = crypto.randomUUID()
+  idempotencyKey: string = generateUuid()
 ): Promise<OutboxItemRecord> {
   const draftWithKey: DrawingDraftRecord = {
     ...draft,
@@ -86,7 +87,7 @@ export async function writeDrawingDraftAndEnqueueOutbox(
   };
 
   const outboxItem: OutboxItemRecord = {
-    id: crypto.randomUUID(),
+    id: generateUuid(),
     idempotency_key: idempotencyKey,
     kind: "drawing_draft",
     endpoint: "/api/draw/drafts",

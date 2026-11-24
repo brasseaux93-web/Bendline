@@ -1,125 +1,22 @@
-import { SEED_DRILL_QUESTIONS, SEED_JURISDICTIONS } from "@/lib/domain/seed-catalog";
-import type { Jurisdiction, ServableQuestion } from "@/lib/domain/types";
+import {
+  SEED_DRILL_QUESTIONS,
+  SEED_JURISDICTIONS,
+  SEED_TOPICS,
+} from "@/lib/domain/seed-catalog";
+import type { ServableQuestion } from "@/lib/domain/types";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import {
+  SEED_PUBLIC_ERRATA,
+  buildPublicLedgerItems,
+  computeAccuracyMetrics,
+  type AccuracyMetricsSnapshot,
+  type JurisdictionVerificationRow,
+} from "./compute";
 
-export interface JurisdictionVerificationRow {
-  id: string;
-  state: string;
-  name: string;
-  code_family: "IPC" | "UPC";
-  edition: string;
-  exam_vendor: string;
-  open_book: boolean;
-  last_verified_at: string | null;
-  bulletin_url: string | null;
-}
-
-export interface AccuracyMetricsSnapshot {
-  publishedQuestionsCount: number;
-  licensedReviewedCount: number;
-  pctReviewedByLicensed: number;
-  medianReviewAgeDays: number;
-  confirmedErrorCount: number;
-  totalAttemptsCount: number;
-  confirmedErrorRatePer1000: number;
-  jurisdictionVerifications: JurisdictionVerificationRow[];
-  source: "supabase_rpc" | "seed_catalog";
-  generatedAt: string;
-}
-
-export function computeMedianNumber(values: number[]): number {
-  const valid = values
-    .filter((v) => Number.isFinite(v) && v >= 0)
-    .sort((a, b) => a - b);
-
-  if (valid.length === 0) return 0;
-
-  const mid = Math.floor(valid.length / 2);
-  if (valid.length % 2 === 1) {
-    return Math.round(valid[mid]);
-  }
-  return Math.round((valid[mid - 1] + valid[mid]) / 2);
-}
+export * from "./compute";
 
 /**
- * Computes aggregate accuracy and editorial review transparency metrics
- * across published questions, confirmed error reports, and jurisdiction bulletins.
- */
-export function computeAccuracyMetrics(params: {
-  questions: ServableQuestion[];
-  confirmedErrorCount: number;
-  totalAttemptsCount: number;
-  jurisdictions: Jurisdiction[];
-  nowIso?: string;
-  source?: "supabase_rpc" | "seed_catalog";
-}): AccuracyMetricsSnapshot {
-  const nowIso = params.nowIso ?? new Date().toISOString();
-  const nowMs = Date.parse(nowIso);
-
-  const published = params.questions.filter(
-    (q) =>
-      (q.status ?? "published") === "published" &&
-      (q.review_verdict ?? "approved") === "approved"
-  );
-
-  const licensedReviewedCount = published.filter(
-    (q) =>
-      typeof q.reviewer_license_no === "string" &&
-      q.reviewer_license_no.trim().length > 0
-  ).length;
-
-  const publishedQuestionsCount = published.length;
-  const pctReviewedByLicensed =
-    publishedQuestionsCount > 0
-      ? Math.round((licensedReviewedCount / publishedQuestionsCount) * 100)
-      : 0;
-
-  const reviewAgesDays: number[] = [];
-  for (const q of published) {
-    if (!q.reviewed_at) continue;
-    const revMs = Date.parse(q.reviewed_at);
-    if (!Number.isFinite(revMs)) continue;
-    const ageDays = Math.max(0, Math.round((nowMs - revMs) / 86_400_000));
-    reviewAgesDays.push(ageDays);
-  }
-
-  const medianReviewAgeDays = computeMedianNumber(reviewAgesDays);
-
-  const safeAttempts = Math.max(0, Math.floor(params.totalAttemptsCount));
-  const safeErrors = Math.max(0, Math.floor(params.confirmedErrorCount));
-  const confirmedErrorRatePer1000 =
-    safeAttempts > 0
-      ? Number(((safeErrors / safeAttempts) * 1000).toFixed(2))
-      : 0;
-
-  return {
-    publishedQuestionsCount,
-    licensedReviewedCount,
-    pctReviewedByLicensed,
-    medianReviewAgeDays,
-    confirmedErrorCount: safeErrors,
-    totalAttemptsCount: safeAttempts,
-    confirmedErrorRatePer1000,
-    jurisdictionVerifications: [...params.jurisdictions]
-      .sort((a, b) => a.state.localeCompare(b.state))
-      .map((j) => ({
-        id: j.id,
-        state: j.state,
-        name: j.name,
-        code_family: j.code_family,
-        edition: j.edition,
-        exam_vendor: j.exam_vendor,
-        open_book: j.open_book,
-        last_verified_at: j.last_verified_at,
-        bulletin_url: j.bulletin_url,
-      })),
-    source: params.source ?? "seed_catalog",
-    generatedAt: nowIso,
-  };
-}
-
-/**
- * Loads aggregate-only public accuracy metrics on the server (or seed fallback when offline).
+ * Loads aggregate-only public accuracy metrics + item-by-item ledger on the server.
  */
 export async function loadPublicAccuracyMetrics(): Promise<AccuracyMetricsSnapshot> {
   const supabase = await createServerSupabaseClient();
@@ -127,7 +24,7 @@ export async function loadPublicAccuracyMetrics(): Promise<AccuracyMetricsSnapsh
 
   if (supabase) {
     try {
-      const [{ data: rpcData, error: rpcErr }, { data: jurRows }] =
+      const [{ data: rpcData, error: rpcErr }, { data: jurRows }, { data: ledgerRows }] =
         await Promise.all([
           supabase.rpc("public_accuracy_metrics"),
           supabase
@@ -136,6 +33,7 @@ export async function loadPublicAccuracyMetrics(): Promise<AccuracyMetricsSnapsh
               "id, state, name, code_family, edition, exam_vendor, open_book, last_verified_at, bulletin_url"
             )
             .order("state", { ascending: true }),
+          supabase.rpc("public_accuracy_ledger_items"),
         ]);
 
       if (!rpcErr && rpcData && typeof rpcData === "object") {
@@ -152,6 +50,24 @@ export async function loadPublicAccuracyMetrics(): Promise<AccuracyMetricsSnapsh
 
         const publishedQuestionsCount = Number(m.published_questions_count ?? 0);
         if (publishedQuestionsCount > 0) {
+          const parsedLedgerRows = Array.isArray(ledgerRows)
+            ? (ledgerRows as Array<
+                Pick<
+                  ServableQuestion,
+                  | "id"
+                  | "stem"
+                  | "type"
+                  | "topic_id"
+                  | "code_family"
+                  | "edition"
+                  | "code_ref"
+                  | "version"
+                  | "reviewed_at"
+                  | "reviewer_license_no"
+                > & { status?: string }
+              >)
+            : [];
+
           return {
             publishedQuestionsCount,
             licensedReviewedCount: Number(m.licensed_reviewed_count ?? 0),
@@ -176,6 +92,11 @@ export async function loadPublicAccuracyMetrics(): Promise<AccuracyMetricsSnapsh
                     last_verified_at: j.last_verified_at,
                     bulletin_url: j.bulletin_url,
                   })),
+            items:
+              parsedLedgerRows.length > 0
+                ? buildPublicLedgerItems(parsedLedgerRows, SEED_TOPICS, true)
+                : buildPublicLedgerItems(SEED_DRILL_QUESTIONS, SEED_TOPICS, true),
+            errata: SEED_PUBLIC_ERRATA,
             source: "supabase_rpc",
             generatedAt: m.generated_at ?? nowIso,
           };
@@ -191,6 +112,7 @@ export async function loadPublicAccuracyMetrics(): Promise<AccuracyMetricsSnapsh
     confirmedErrorCount: 0,
     totalAttemptsCount: 0,
     jurisdictions: SEED_JURISDICTIONS,
+    includeReviewRevisions: true,
     nowIso,
     source: "seed_catalog",
   });

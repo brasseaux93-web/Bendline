@@ -1,3 +1,4 @@
+import { generateUuid } from "@/lib/utils";
 import {
   HARD_GATE_KEYS,
   HARD_GATE_MIN_SCORE,
@@ -130,7 +131,7 @@ export function buildReviewRecord(
   options: { id?: string; reviewedAt?: string } = {}
 ): ReviewRecord {
   return {
-    id: options.id ?? crypto.randomUUID(),
+    id: options.id ?? generateUuid(),
     item_kind: input.itemKind,
     item_id: input.itemId,
     item_title: input.itemTitle,

@@ -14,6 +14,7 @@ import {
 } from "@/lib/draw";
 import { getOfflineDb } from "@/lib/offline/db";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { generateUuid } from "@/lib/utils";
 
 export function AdminExerciseEditor() {
   const { jurisdictions, profile } = useAppState();
@@ -94,7 +95,7 @@ export function AdminExerciseEditor() {
     }
 
     const record: DrawingExerciseConfig = {
-      id: crypto.randomUUID(),
+      id: generateUuid(),
       jurisdiction_id: jurisdictionId,
       title: title.trim(),
       prompt_md: promptMd.trim(),
