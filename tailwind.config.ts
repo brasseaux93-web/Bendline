@@ -40,37 +40,17 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: [
-          "var(--font-inter)",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "sans-serif",
-        ],
-        mono: [
-          "ui-monospace",
-          "SFMono-Regular",
-          "Menlo",
-          "Monaco",
-          "Consolas",
-          "monospace",
-        ],
+        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
       },
       fontSize: {
-        hero: [
-          "clamp(2rem, 4.5vw, 3.25rem)",
-          { lineHeight: "1.08", letterSpacing: "-0.025em", fontWeight: "700" },
-        ],
-        h1: [
-          "clamp(1.5rem, 2.8vw, 2rem)",
-          { lineHeight: "1.18", letterSpacing: "-0.02em", fontWeight: "600" },
-        ],
-        h2: [
-          "1.25rem",
-          { lineHeight: "1.28", letterSpacing: "-0.015em", fontWeight: "600" },
-        ],
+        hero: ["clamp(2rem, 4.5vw, 3.25rem)", { lineHeight: "1.08", letterSpacing: "-0.025em", fontWeight: "700" }],
+        h1: ["clamp(1.5rem, 2.8vw, 2rem)", { lineHeight: "1.18", letterSpacing: "-0.02em", fontWeight: "600" }],
+        h2: ["1.25rem", { lineHeight: "1.28", letterSpacing: "-0.015em", fontWeight: "600" }],
         h3: ["1.0625rem", { lineHeight: "1.35", fontWeight: "600" }],
         body: ["1rem", { lineHeight: "1.5" }],
-        caption: ["0.75rem", { lineHeight: "1.35", fontWeight: "500" }],
+        caption: ["0.8125rem", { lineHeight: "1.4", fontWeight: "500" }],
       },
       borderRadius: {
         card: "16px",
