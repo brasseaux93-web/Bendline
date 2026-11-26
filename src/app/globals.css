@@ -47,8 +47,8 @@ html[data-theme="light"] {
   --ink: 13 20 33;
   --muted: 71 85 105;
   --border: 118 134 156;
-  --primary: 146 64 14;
-  --primary-hover: 120 53 15;
+  --primary: 180 83 9;
+  --primary-hover: 146 64 14;
   --primary-ink: 255 255 255;
   --accent: 14 106 132;
   --success: 4 108 76;
@@ -203,6 +203,10 @@ html[data-reduce-motion="true"] *::after {
 }
 
 @layer components {
+  .eyebrow {
+    @apply font-mono text-caption uppercase tracking-[0.14em] text-accent-cyan;
+  }
+
   .btn-primary {
     @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-base font-semibold transition duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:pointer-events-none disabled:opacity-50;
     background-color: rgb(var(--primary));
